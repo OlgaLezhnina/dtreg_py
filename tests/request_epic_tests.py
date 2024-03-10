@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Mar  9 16:25:52 2024
-
-@author: LezhninaO
-"""
 import unittest
 class TestRequest(unittest.TestCase):
 
@@ -13,8 +7,3 @@ class TestRequest(unittest.TestCase):
         
 if __name__ == '__main__':
     unittest.main()
-###
-import requests
-def request_epic(path):
-    r = requests.get(path)
-    return r.json()

@@ -9,7 +9,8 @@ def extract_epic(template_doi):
             "identifier": info["Identifier"],
             "schema_type": info["Schema"]["Type"]}
         extracted = [[schema_dict]]
-       for prop in info["Schema"].get("Properties", []):
+        all_props = []
+        for prop in info["Schema"].get("Properties", []):
             if "Type" in prop:
                 specific_prop_dict = {
                     "prop_name": prop["Name"],
@@ -23,7 +24,8 @@ def extract_epic(template_doi):
                     "type_id": "value",
                     "cardinality": "no_info",
                     "nested": False}   
-            extracted.append(specific_prop_dict)
+            all_props.append(specific_prop_dict)
+        extracted.append(all_props)
         extract_all[schema_dict["name"]] = list(extracted) 
         return(extract_all)
     extractor_function(template_doi)

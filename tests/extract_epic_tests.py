@@ -1,4 +1,5 @@
 import unittest
+
 class TestRequest(unittest.TestCase):
 
     def test_obtain(self):

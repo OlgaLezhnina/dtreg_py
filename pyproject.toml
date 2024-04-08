@@ -1,3 +1,23 @@
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "dtreg"
+authors = [
+    {name = "Olga Lezhnina", email = "olga.lezhnina@tib.eu"},
+    {name = "Manuel Prinz", email = "manuel.prinz@tib.eu"},
+    {name = "Markus Stocker", email = "markus.stocker@tib.eu"},
+]
+description = "My package description"
+readme = "README.rst"
+requires-python = ">=3.8"
+keywords = ["data type registry", "templates"]
+license = {text = "BSD-3-Clause"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "requests",    
+]
+dynamic = ["version"]

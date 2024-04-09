@@ -1,2 +1,3 @@
-from importlib.resources import files
-template_1 = files('dtreg.templates').joinpath('empty_schema.json').read_text()
+import importlib_resources
+resources = importlib_resources.files("dtreg")
+template_1 = resources.joinpath("src/dtreg/data", "empty_schema.json").read_text()

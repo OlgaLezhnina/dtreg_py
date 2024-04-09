@@ -26,4 +26,4 @@ dynamic = ["version"]
 include-package-data = true
 
 [tool.setuptools.packages.find]
-where = ["dtreg"]
+where = ["src"]

@@ -1,1 +1,1 @@
-recursive-include dtreg/dtreg/templates *
+recursive-include src/dtreg/templates *

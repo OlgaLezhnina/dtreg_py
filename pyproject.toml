@@ -30,4 +30,4 @@ include-package-data = true
 where = ["src"]
 
 [tool.setuptools.package-data]
-dtreg = ["*.json"]
+"dtreg.data" = ["*.json", "src/dtreg/data/*"]

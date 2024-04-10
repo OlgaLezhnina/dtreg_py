@@ -10,15 +10,16 @@ authors = [
     {name = "Markus Stocker", email = "markus.stocker@tib.eu"},
 ]
 description = "My package description"
-readme = "README.rst"
+readme = "README.md"
 requires-python = ">=3.8"
 keywords = ["data type registry", "templates"]
-license = {text = "BSD-3-Clause"}
+license = {text = "MIT"}
 classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = [
     "importlib_resources",
+    "json",
     "requests",    
 ]
 dynamic = ["version"]

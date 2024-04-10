@@ -1,4 +1,4 @@
-#from .request_epic import request_epic
+from .request_epic import request_epic
 
 def extract_epic(template_doi):
     extract_all = {}

@@ -19,7 +19,6 @@ classifiers = [
 ]
 dependencies = [
     "importlib_resources",
-    "json",
     "requests",    
 ]
 dynamic = ["version"]

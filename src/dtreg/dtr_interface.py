@@ -19,4 +19,9 @@ def select_dtr(template_doi):
     if template_doi.split("/", 4)[3] == '21.T11969':
         datypreg = Epic()
         return datypreg
-  
+
+def supply_dtr_with_info(template_doi):
+    dtr = select_dtr(template_doi)
+    template_info = dtr.get_template_info(template_doi)
+    return dtr, template_info 
+    

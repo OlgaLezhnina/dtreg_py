@@ -1,8 +1,10 @@
 from .dtr_interface import supply_dtr_with_info
+from types import SimpleNamespace
 
 def load_objects(template_doi):
     datypreg, templ_info = supply_dtr_with_info(template_doi)
-    result = write_objects(templ_info)
+    result_dict = write_objects(templ_info)
+    result = SimpleNamespace(**result_dict)
     return result
 
 def write_objects(templ_info):

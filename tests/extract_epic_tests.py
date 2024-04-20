@@ -1,8 +1,8 @@
 import unittest
 from dtreg.extract_epic import extract_epic
-class TestRequest(unittest.TestCase):
+class TestExtract(unittest.TestCase):
 
-    def test_obtain(self):
+    def test_extract(self):
         result = extract_epic("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
         expected = {'PIDINST-SchemaObject': [[{'name': 'PIDINST-SchemaObject',
             'identifier': '21.T11969/1ea0e148d9bbe08335cd',

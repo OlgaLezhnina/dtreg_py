@@ -1,4 +1,5 @@
 import unittest
+from dtreg.request_epic import request_epic
 class TestRequest(unittest.TestCase):
 
     def test_obtain(self):

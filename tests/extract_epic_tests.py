@@ -1,5 +1,5 @@
 import unittest
-
+from dtreg.extract_epic import extract_epic
 class TestRequest(unittest.TestCase):
 
     def test_obtain(self):

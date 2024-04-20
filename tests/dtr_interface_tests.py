@@ -1,4 +1,5 @@
 import unittest
+from dtreg.dtr_interface import select_dtr
 class TestRequest(unittest.TestCase):
 
     def test_obtain(self):

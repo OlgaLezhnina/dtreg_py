@@ -1,4 +1,5 @@
 import unittest
+from dtreg.helpers import format_string
 class TestRequest(unittest.TestCase):
 
     def test_obtain(self):

@@ -10,10 +10,16 @@ the ePIC DTR with DOI
 “<https://doi.org/21.T11969/74bc7748b8cd520908bc>”.
 
 ```{python}
+## import functions from the dtreg
 from dtreg.load_objects import load_objects
+## load objects for the schema you need
 dt = load_objects("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+## check the schema names to select object(s) you intend to use
 dt.__dict__.keys() 
+## for the object you will use, e.g., dt.inferential_test_output, check the fields names
 dt.inferential_test_output.prop_list 
+## create your instance by filling the fields of your choice
 my_inst = dt.inferential_test_output(label = "my_results")
+## write a JSON-LD file
 ```
 For more information, please see XXX.

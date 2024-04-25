@@ -1,7 +1,7 @@
 from .dtr_interface import supply_dtr_with_info
 from types import SimpleNamespace
 
-def load_objects(template_doi):
+def load_datatype(template_doi):
     datypreg, templ_info = supply_dtr_with_info(template_doi)
     result_dict = write_objects(templ_info)
     result = SimpleNamespace(**result_dict)

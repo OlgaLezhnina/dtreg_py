@@ -12,6 +12,7 @@ the ePIC DTR with DOI
 ```{python}
 ## import functions from the dtreg
 from dtreg.load_datatype import load_datatype
+from dtreg.to_jsonld import to_jsonld
 ## load the schema you need
 dt = load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
 ## check the schema names to select the one(s) you intend to use
@@ -20,6 +21,7 @@ dt.__dict__.keys()
 dt.inferential_test_output.prop_list 
 ## create your instance by filling the fields of your choice
 my_inst = dt.inferential_test_output(label = "my_results")
-## write a JSON-LD file
+## write the instance in JSON-LD format
+my_json = to_jsonld(my_inst) 
 ```
 For more information, please see XXX.

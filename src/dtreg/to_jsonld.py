@@ -1,5 +1,6 @@
 from .helpers import generate_uid
 import pandas as pd
+import json
 
 def differ_type(input):
     if isinstance(input, pd.DataFrame):
@@ -8,21 +9,52 @@ def differ_type(input):
         output = input
     return output
 
-def df_structure(df, label):
-    pass
+def df_structure(df):
+  uid = generate_uid()
+  result = {}  
+  result["@type"] = "https://doi.org/21.T11969/0424f6e7026fa4bc2c4a"
+  result["label"] = df.name if hasattr(df, "name") else "Table"  
+  column_ids = []
+  result["columns"] = []
+  for i, col in enumerate(df.columns):  
+    column = {
+      "@type": "https://doi.org/21.T11969/65ba00e95e60fb8971e6",
+      "titles": col,
+      "number": i,
+      "@id":"_:n" + str(uid())
+    }
+    column_ids.append(column["@id"])
+    result["columns"].append(column)
+  result["rows"] = []
+  for i, ro in df.iterrows():
+    row = {
+      "@type": "https://doi.org/21.T11969/9bf7a8e8909bfd491b38",
+      "number": i,
+      "titles": str(i),
+      "cells": []
+    }
+    for j, cel_val in enumerate(ro): 
+      row["cells"].append({
+        "@type":"https://doi.org/21.T11969/4607bc7c42ac8db29bfc",
+        "value": str(cel_val) if not pd.isna(cel_val) else None,          
+        "column": column_ids[j]
+      })     
+    result["rows"].append(row)
+  result["@id"] = "_:n" + str(uid()) 
+  return(result)
+
     
 def to_jsonld(instance):
     result_all = {}
     uid = generate_uid()
     context = {}
-    context[instance.identifier] = ("https://doi.org/"+ instance.identifier)
+    context[instance.identifier] = "https://doi.org/"+ instance.identifier
     def write_info(instance):
-        result = {}
-        result["@id"] = "_:n" + str(uid())
-        result["@label"] = instance.label
-        result["@type"] = "https://doi.org/" + instance.identifier
-        field_list = instance.prop_list
-        for field in field_list:
+        result = {
+        "@id": "_:n" + str(uid()),
+        "@label": instance.label,
+        "@type": "https://doi.org/" + instance.identifier}
+        for field in instance.prop_list:
             instance_field = getattr(instance, field)
             if hasattr(instance_field, "prop_list"):
                 result[field] = write_info(instance_field)
@@ -33,4 +65,5 @@ def to_jsonld(instance):
         return result
     result_all[instance.name] = write_info(instance)
     result_all["@context"] = context
-    return result_all
+    result_json = json.dumps(result_all, indent = 2)
+    return result_json

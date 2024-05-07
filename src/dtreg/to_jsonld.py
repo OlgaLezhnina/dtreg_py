@@ -2,6 +2,7 @@ from .helpers import generate_uid
 import pandas as pd
 import json
 
+
 def differ_type(input):
     if isinstance(input, pd.DataFrame):
         output = df_structure(input)    
@@ -10,7 +11,7 @@ def differ_type(input):
     return output
 
 def df_structure(df):
-  uid = generate_uid()
+  global uid
   result = {}  
   result["@type"] = "https://doi.org/21.T11969/0424f6e7026fa4bc2c4a"
   result["label"] = df.name if hasattr(df, "name") else "Table"  
@@ -46,6 +47,7 @@ def df_structure(df):
     
 def to_jsonld(instance):
     result_all = {}
+    global uid
     uid = generate_uid()
     context = {}
     context[instance.identifier] = "https://doi.org/"+ instance.identifier

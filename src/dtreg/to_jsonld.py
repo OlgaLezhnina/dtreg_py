@@ -21,7 +21,7 @@ def df_structure(df):
     column = {
       "@type": "https://doi.org/21.T11969/65ba00e95e60fb8971e6",
       "titles": col,
-      "number": i,
+      "number": i + 1,
       "@id":"_:n" + str(uid())
     }
     column_ids.append(column["@id"])
@@ -30,7 +30,7 @@ def df_structure(df):
   for i, ro in df.iterrows():
     row = {
       "@type": "https://doi.org/21.T11969/9bf7a8e8909bfd491b38",
-      "number": i,
+      "number": i + 1,
       "titles": str(i),
       "cells": []
     }
@@ -57,11 +57,13 @@ def to_jsonld(instance):
         "@type": "https://doi.org/" + instance.identifier}
         for field in instance.prop_list:
             instance_field = getattr(instance, field)
-            if hasattr(instance_field, "prop_list"):
-                result[field] = write_info(instance_field)
-            elif instance_field is None:
+            if instance_field is None or instance_field is []:
                 pass
-            else:
+            elif isinstance(instance_field, list) and hasattr(instance_field[0], "prop_list"):
+                result[field] = list(map(write_info, instance_field))           
+            elif hasattr(instance_field, "prop_list"):
+                result[field] = write_info(instance_field)
+            else: 
                 result[field] = differ_type(instance_field)
         return result
     result_all[instance.name] = write_info(instance)

@@ -15,9 +15,9 @@
           {
             "type": "object",
             "properties": {
-              "name": {"type": "string"},
-              "identifier": {"type": "string"},
-              "schema_type": {"type": "string"}
+              "dt_name": {"type": "string"},
+              "dt_id": {"type": "string"},
+              "dt_class": {"type": "string"}
             },
             "additionalProperties": false
           }
@@ -28,9 +28,10 @@
         "items": {
           "type": "object",
           "properties": {
-            "prop_name": {"type": "string"},
-            "type_id": {"type": "string"},
-            "cardinality": {"type": "string"},
+            "dtp_name": {"type": "string"},
+            "dtp_id": {"type": "string"},
+            "dtp_cardinality": {"type": "string"},
+            "dtp_value:type": {"type": "string"},
             "nested": {"type": "boolean"}
           },
           "additionalProperties": false

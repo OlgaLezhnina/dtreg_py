@@ -30,7 +30,8 @@
           "properties": {
             "dtp_name": {"type": "string"},
             "dtp_id": {"type": "string"},
-            "dtp_cardinality": {"type": "string"},
+            "dtp_card_min": {"type": "string"},
+            "dtp_card_max": {"type": "string"},
             "dtp_value:type": {"type": "string"},
             "nested": {"type": "boolean"}
           },

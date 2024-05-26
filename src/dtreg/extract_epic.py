@@ -14,7 +14,7 @@ def extract_epic(dt_id):
             if "Type" in prop:
                 specific_prop_dict = {
                     "dtp_name": prop["Name"],
-                    "dtp_id": info["name"] + "#" + prop["Name"],
+                    "dtp_id": info["Identifier"] + "#" + prop["Name"],
                     "dtp_cardinality": prop["Properties"]["Cardinality"],
                     "dtp_value_class": prop["Type"],
                     "nested": True}
@@ -22,7 +22,7 @@ def extract_epic(dt_id):
             else:        
                 specific_prop_dict = {
                     "dtp_name": prop["Property"],
-                    "dtp_id": info["name"] + "#" + prop["Property"],
+                    "dtp_id": info["Identifier"] + "#" + prop["Property"],
                     "dtp_cardinality": "no_info",
                     "dtp_value_class": prop["Value"],
                     "nested": False}   

@@ -1,4 +1,5 @@
 from .request_dtr import request_dtr
+from dtreg.helpers import range_split
 
 def extract_epic(dt_id):
     extract_all = {}
@@ -11,18 +12,21 @@ def extract_epic(dt_id):
         extracted = [[schema_dict]]
         all_props = []
         for prop in info["Schema"].get("Properties", []):
+            card = range_split(prop["Properties"]["Cardinality"])
             if "Type" in prop:
                 specific_prop_dict = {
                     "dtp_name": prop["Name"],
                     "dtp_id": info["Identifier"] + "#" + prop["Name"],
-                    "dtp_cardinality": prop["Properties"]["Cardinality"],
+                    "dtp_card_min": card["min"],
+                    "dtp_card_max": card["max"],
                     "dtp_value_class": prop["Type"]}
                 extractor_function("https://doi.org/" + prop["Type"])
             else:        
                 specific_prop_dict = {
                     "dtp_name": prop["Property"],
                     "dtp_id": info["Identifier"] + "#" + prop["Property"],
-                    "dtp_cardinality": "no_info",
+                    "dtp_card_min": str(None),
+                    "dtp_card_max": str(None),
                     "dtp_value_class": prop["Value"]}   
             all_props.append(specific_prop_dict)
         extracted.append(all_props)

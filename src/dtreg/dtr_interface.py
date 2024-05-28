@@ -1,4 +1,3 @@
-import sys
 from typing import Protocol
 from .extract_epic import extract_epic
 from .extract_orkg import extract_orkg
@@ -27,13 +26,14 @@ class Orkg:
         return template_info             
 
 def select_dtr(template_doi):
+    datypreg = None
     if template_doi.split("/", 4)[3] == '21.T11969':
         datypreg = Epic()
     elif "orkg.org" in template_doi.split("/", 4)[2]:
-        datypreg = Epic()
+        datypreg = Orkg()
     else:
-        sys.exit("Please check whether the schema belongs to the ePIC or the ORKG dtr")
-        return datypreg
+        print("Please check whether the schema belongs to the ePIC or the ORKG dtr")        
+    return datypreg
 
 def supply_dtr_with_info(template_doi):
     dtr = select_dtr(template_doi)

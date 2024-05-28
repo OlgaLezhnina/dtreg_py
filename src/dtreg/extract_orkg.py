@@ -28,7 +28,9 @@ def extract_orkg(dt_id):
                 info_n = request_dtr(orkg_prefix + "?target_class=" + prop["class"]["id"])
                 if len(info_n["content"]) > 0:
                    nested_id = info_n["content"][0]["id"]
-                   extractor_function(nested_id)
+                   nested_name = info_n["content"][0]["label"]
+                   if nested_name not in extract_all:
+                       extractor_function(nested_id)
             all_props.append(specific_prop_dict)
         extracted.append(all_props)
         extract_all[schema_dict["dt_name"]] = list(extracted) 

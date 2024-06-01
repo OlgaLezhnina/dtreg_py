@@ -31,6 +31,5 @@ def extract_epic(dt_id):
             all_props.append(specific_prop_dict)
         extracted.append(all_props)
         extract_all[schema_dict["dt_name"]] = list(extracted) 
-        return(extract_all)
     extractor_function(dt_id)
     return(extract_all)

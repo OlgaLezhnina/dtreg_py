@@ -12,8 +12,8 @@ def extract_epic(dt_id):
         extracted = [[schema_dict]]
         all_props = []
         for prop in info["Schema"].get("Properties", []):
-            card = range_split(prop["Properties"]["Cardinality"])
             if "Type" in prop:
+                card = range_split(prop["Properties"]["Cardinality"])
                 specific_prop_dict = {
                     "dtp_name": prop["Name"],
                     "dtp_id": info["Identifier"] + "#" + prop["Name"],

@@ -5,12 +5,12 @@ def range_split(range_str):
     range_parts = range_str.split("-")
     if len(range_parts) == 1:
         output = {
-            "min": range_str,
-            "max": range_str}
+            "min": int(range_str),
+            "max": int(range_str)}
     else:
         output = {
-            "min": range_parts[0],
-            "max": range_parts[1] if range_parts[1] != "n" else str(None)}
+            "min": int(range_parts[0]),
+            "max": None if range_parts[1] == " n" else int(range_parts[1])}
     return output        
 
 def generate_uid():

@@ -25,8 +25,8 @@ def extract_epic(dt_id):
                 specific_prop_dict = {
                     "dtp_name": prop["Property"],
                     "dtp_id": info["Identifier"] + "#" + prop["Property"],
-                    "dtp_card_min": str(None),
-                    "dtp_card_max": str(None),
+                    "dtp_card_min": None,
+                    "dtp_card_max": None,
                     "dtp_value_class": prop["Value"]}   
             all_props.append(specific_prop_dict)
         extracted.append(all_props)

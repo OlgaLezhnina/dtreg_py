@@ -17,15 +17,15 @@ def extract_orkg(dt_id):
                 specific_prop_dict = {
                     "dtp_name": prop["path"]["label"],
                     "dtp_id": prop["path"]["id"],
-                    "dtp_card_min": str(prop["min_count"]),
-                    "dtp_card_max": str(prop["max_count"]),
+                    "dtp_card_min": prop["min_count"],
+                    "dtp_card_max": prop["max_count"],
                     "dtp_value_class": prop["datatype"]["id"]}
             else:        
                 specific_prop_dict = {
                     "dtp_name": prop["path"]["label"],
                     "dtp_id": prop["path"]["id"],
-                    "dtp_card_min": str(prop["min_count"]),
-                    "dtp_card_max": str(prop["max_count"]),
+                    "dtp_card_min": prop["min_count"],
+                    "dtp_card_max": prop["max_count"],
                     "dtp_value_class": prop["class"]["id"]}
                 info_n = request_dtr(orkg_prefix + "?target_class=" + prop["class"]["id"])
                 if len(info_n["content"]) > 0:

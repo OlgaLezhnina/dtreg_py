@@ -6,7 +6,7 @@ class TestHelpers(unittest.TestCase):
         self.assertEqual(format_string("a-B c"), "a_b_c")
         
     def test_range_split(self):
-        self.assertEqual(range_split("0 - 1"), {'min': '0', 'max': '1'})
+        self.assertEqual(range_split("0 - 1"), {'min': 0, 'max': 1})
         
 if __name__ == '__main__':
     unittest.main()

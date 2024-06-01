@@ -8,9 +8,9 @@ class TestFromStatic(unittest.TestCase):
 
     def test_static(self):
         templ = from_static("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
-        expected = {'PIDINST-SchemaObject': [[{'name': 'PIDINST-SchemaObject',
-            'identifier': '21.T11969/1ea0e148d9bbe08335cd',
-            'schema_type': 'Object'}],
+        expected = {'PIDINST-SchemaObject': [[{'dt_name': 'PIDINST-SchemaObject',
+            'dt_id': '21.T11969/1ea0e148d9bbe08335cd',
+            'dt_class': 'Object'}],
           []]}
         self.assertEqual(templ, expected)
         

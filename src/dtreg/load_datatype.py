@@ -10,21 +10,21 @@ def load_datatype(template_doi):
 def write_objects(templ_info):
     objects = {}
     for key in templ_info.keys():
-        name = templ_info[key][0][0]["name"]
+        dt_name = templ_info[key][0][0]["dt_name"]
         prop_list = [] 
         if len(templ_info[key][1]) != 0:
             for props in templ_info[key][1]:
-                prop_list.append(props["prop_name"]) 
+                prop_list.append(props["dtp_name"]) 
         def __init__(self, *args, **kwargs):
-            for prop_name in self.prop_list:
-                setattr(self, prop_name, kwargs.get(prop_name))                
-        class_object = type(name, 
+            for dtp_name in self.prop_list:
+                setattr(self, dtp_name, kwargs.get(dtp_name))                
+        class_object = type(dt_name, 
                  (),                    
-                 {"name": name, 
-                  "identifier": templ_info[key][0][0]["identifier"] ,
-                  "schema_type": templ_info[key][0][0]["schema_type"],
+                 {"dt_name": dt_name, 
+                  "dt_id": templ_info[key][0][0]["dt_id"] ,
+                  "dt_class": templ_info[key][0][0]["dt_class"],
                   "prop_list":prop_list,
                   "__init__": __init__}) 
-        objects.update({name: class_object})
+        objects.update({dt_name: class_object})
     return objects
     

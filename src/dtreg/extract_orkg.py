@@ -1,11 +1,12 @@
 from .request_dtr import request_dtr
 
-def extract_orkg(dt_id):
+def extract_orkg(datatype_id):
+    part = datatype_id.split("/", 4)
+    orkg_hostname = part[0] + "//" + part[2]
+    resource_id = part[4]
     extract_all = {}
-    def extractor_function(dt_id):
-        part = dt_id.split("/", 4)
-        orkg_prefix = part[0] + "//" + part[2] + "//api/templates/"
-        info = request_dtr(orkg_prefix + part[4])
+    def extractor_function(resource_id):
+        info = request_dtr(orkg_hostname + "/api/templates/" + resource_id)
         schema_dict = {
             "dt_name": info["label"],
             "dt_id": info["id"],
@@ -23,7 +24,7 @@ def extract_orkg(dt_id):
                 specific_prop_dict["dtp_value_class"] = prop["datatype"]["id"]
             else:        
                 specific_prop_dict["dtp_value_class"] = prop["class"]["id"]
-                info_n = request_dtr(orkg_prefix + "?target_class=" + prop["class"]["id"])
+                info_n = request_dtr(orkg_hostname + "/api/templates/?target_class=" + prop["class"]["id"])
                 if len(info_n["content"]) > 0:
                    nested_id = info_n["content"][0]["id"]
                    nested_name = info_n["content"][0]["label"]
@@ -32,5 +33,5 @@ def extract_orkg(dt_id):
             all_props.append(specific_prop_dict)
         extracted.append(all_props)
         extract_all[schema_dict["dt_name"]] = list(extracted) 
-    extractor_function(dt_id)
+    extractor_function(resource_id)
     return(extract_all)

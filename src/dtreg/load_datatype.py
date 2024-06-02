@@ -1,4 +1,5 @@
 from .dtr_interface import supply_dtr_with_info
+from .helpers import format_string
 from types import SimpleNamespace
 
 def load_datatype(template_doi):
@@ -10,11 +11,11 @@ def load_datatype(template_doi):
 def write_objects(templ_info):
     objects = {}
     for key in templ_info.keys():
-        dt_name = templ_info[key][0][0]["dt_name"]
+        dt_name = format_string(templ_info[key][0][0]["dt_name"])
         prop_list = [] 
         if len(templ_info[key][1]) != 0:
             for props in templ_info[key][1]:
-                prop_list.append(props["dtp_name"]) 
+                prop_list.append(format_string(props["dtp_name"])) 
         def __init__(self, *args, **kwargs):
             for dtp_name in self.prop_list:
                 setattr(self, dtp_name, kwargs.get(dtp_name))                

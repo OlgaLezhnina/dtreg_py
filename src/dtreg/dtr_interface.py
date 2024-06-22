@@ -18,11 +18,7 @@ class Epic:
 
 class Orkg:
     def get_template_info(self, template_doi):
-        static = from_static(template_doi)
-        if static is None:
-           template_info = extract_orkg(template_doi)
-        else:
-           template_info = static
+        template_info = extract_orkg(template_doi)
         return template_info             
 
 def select_dtr(template_doi):

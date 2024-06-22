@@ -50,11 +50,11 @@ def to_jsonld(instance):
     global uid
     uid = generate_uid()
     context = {}
-    context[instance.name] = "https://doi.org/"+ instance.identifier
+    context[instance.dt_name] = "https://doi.org/"+ instance.dt_id
     def write_info(instance):
         result = {
         "@id": "_:n" + str(uid()),
-        "@type": "https://doi.org/" + instance.identifier}
+        "@type": "https://doi.org/" + instance.dt_id}
         for field in instance.prop_list:
             instance_field = getattr(instance, field)
             if instance_field is None or instance_field is []:
@@ -66,7 +66,7 @@ def to_jsonld(instance):
             else: 
                 result[field] = differ_type(instance_field)
         return result
-    result_all[instance.name] = write_info(instance)
+    result_all[instance.dt_name] = write_info(instance)
     result_all["@context"] = context
     result_json = json.dumps(result_all, indent = 2)
     return result_json

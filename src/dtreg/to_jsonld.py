@@ -49,8 +49,6 @@ def to_jsonld(instance):
     result_all = {}
     global uid
     uid = generate_uid()
-    context = {}
-    context["doi:"] = "https://doi.org/"
     def write_info(instance):
         result = {
         "@id": "_:n" + str(uid()),
@@ -67,6 +65,6 @@ def to_jsonld(instance):
                 result[field] = differ_type(instance_field)
         return result
     result_all[instance.dt_name] = write_info(instance)
-    result_all["@context"] = context
+    result_all["@context"] = instance.add_context(instance.prefix)
     result_json = json.dumps(result_all, indent = 2)
     return result_json

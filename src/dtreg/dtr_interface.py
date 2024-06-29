@@ -15,11 +15,20 @@ class Epic:
         else:
            template_info = static
         return template_info       
+    def add_context(self, prefix):
+        context_info = {
+            "doi": prefix}
+        return context_info  
 
 class Orkg:
     def get_template_info(self, template_doi):
         template_info = extract_orkg(template_doi)
-        return template_info             
+        return template_info
+    def add_context(self, prefix):
+        context_info = {
+            "orkgr": prefix + "resource/",
+            "orkgp": prefix + "property/"}
+        return context_info          
 
 def select_dtr(template_doi):
     datypreg = None
@@ -31,8 +40,5 @@ def select_dtr(template_doi):
         print("Please check whether the schema belongs to the ePIC or the ORKG dtr")        
     return datypreg
 
-def supply_dtr_with_info(template_doi):
-    dtr = select_dtr(template_doi)
-    template_info = dtr.get_template_info(template_doi)
-    return dtr, template_info 
+
     

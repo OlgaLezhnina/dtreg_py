@@ -52,7 +52,7 @@ def to_jsonld(instance):
     def write_info(instance):
         result = {
         "@id": "_:n" + str(uid()),
-        "@type": "doi:" + instance.dt_id}
+        "@type": instance.add_dt_type(instance.dt_id)}
         for field in instance.prop_list:
             instance_field = getattr(instance, field)
             if instance_field is None or instance_field is []:

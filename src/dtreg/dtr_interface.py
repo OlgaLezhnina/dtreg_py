@@ -19,6 +19,9 @@ class Epic:
         context_info = {
             "doi": prefix}
         return context_info  
+    def add_dt_type(self, identifier):
+        dt_type = "doi:" + identifier
+        return dt_type  
 
 class Orkg:
     def get_template_info(self, template_doi):
@@ -28,7 +31,11 @@ class Orkg:
         context_info = {
             "orkgr": prefix + "resource/",
             "orkgp": prefix + "property/"}
-        return context_info          
+        return context_info  
+    def add_dt_type(self, identifier):
+        dt_type = "orkgr:" + identifier
+        return dt_type
+      
 
 def select_dtr(template_doi):
     datypreg = None

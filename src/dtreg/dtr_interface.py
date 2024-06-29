@@ -24,9 +24,9 @@ class Orkg:
 def select_dtr(template_doi):
     datypreg = None
     if template_doi.split("/", 4)[3] == '21.T11969':
-        datypreg = Epic()
+        datypreg = Epic
     elif "orkg.org" in template_doi.split("/", 4)[2]:
-        datypreg = Orkg()
+        datypreg = Orkg
     else:
         print("Please check whether the schema belongs to the ePIC or the ORKG dtr")        
     return datypreg

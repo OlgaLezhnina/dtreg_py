@@ -1,14 +1,17 @@
-from .dtr_interface import supply_dtr_with_info
+from .dtr_interface import select_dtr
 from .helpers import format_string
+from .helpers import get_prefix
 from types import SimpleNamespace
 
 def load_datatype(template_doi):
-    datypreg, templ_info = supply_dtr_with_info(template_doi)
-    result_dict = write_objects(templ_info)
+    result_dict = write_objects(template_doi)
     result = SimpleNamespace(**result_dict)
     return result
 
-def write_objects(templ_info):
+def write_objects(template_doi):
+    datypreg = select_dtr(template_doi)
+    templ_info = datypreg().get_template_info(template_doi)
+    prefix = get_prefix(template_doi)
     objects = {}
     for key in templ_info.keys():
         dt_name = format_string(templ_info[key][0][0]["dt_name"])
@@ -20,8 +23,9 @@ def write_objects(templ_info):
             for dtp_name in self.prop_list:
                 setattr(self, dtp_name, kwargs.get(dtp_name))                
         class_object = type(dt_name, 
-                 (),                    
-                 {"dt_name": dt_name, 
+                 (datypreg,),                    
+                 {"prefix": prefix,
+                  "dt_name": dt_name, 
                   "dt_id": templ_info[key][0][0]["dt_id"] ,
                   "dt_class": templ_info[key][0][0]["dt_class"],
                   "prop_list":prop_list,

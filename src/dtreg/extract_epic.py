@@ -1,13 +1,13 @@
 from .request_dtr import request_dtr
 from dtreg.helpers import range_split
 
-def extract_epic(dt_id):
+def extract_epic(datatype_id):
     extract_all = {}
-    def extractor_function(dt_id):
-        info = request_dtr(dt_id + "?locatt=view:json")
+    def extractor_function(datatype_id):
+        info = request_dtr(datatype_id + "?locatt=view:json")
         schema_dict = {
             "dt_name": info["name"],
-            "dt_id": info["Identifier"],
+            "dt_id": info["Identifier"].split("/", 4)[1],
             "dt_class": info["Schema"]["Type"]}
         extracted = [[schema_dict]]
         all_props = []
@@ -31,5 +31,5 @@ def extract_epic(dt_id):
             all_props.append(specific_prop_dict)
         extracted.append(all_props)
         extract_all[schema_dict["dt_name"]] = list(extracted) 
-    extractor_function(dt_id)
+    extractor_function(datatype_id)
     return(extract_all)

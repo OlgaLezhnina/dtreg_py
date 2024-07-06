@@ -3,7 +3,10 @@ def format_string(text):
 
 def get_prefix(string):
     part = string.split("/", 4)
-    prefix = part[0] + "//" + part[2] + "/"
+    if "orkg.org" in string.split("/", 4)[2]:
+        prefix = part[0] + "//" + part[2] + "/"
+    elif string.split("/", 4)[3] == '21.T11969':
+        prefix = part[0] + "//" + part[2] + "/" + part[3] + "/"
     return prefix
 
 def range_split(range_str):

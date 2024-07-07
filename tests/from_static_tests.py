@@ -8,7 +8,7 @@ class TestFromStatic(unittest.TestCase):
 
     def test_static(self):
         templ = from_static("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
-        expected = {'PIDINST-SchemaObject': [[{'dt_name': 'PIDINST-SchemaObject',
+        expected = {'pidinst_schemaobject': [[{'dt_name': 'pidinst_schemaobject',
             'dt_id': '1ea0e148d9bbe08335cd',
             'dt_class': 'Object'}],
           []]}

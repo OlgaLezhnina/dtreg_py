@@ -1,4 +1,5 @@
 from .request_dtr import request_dtr
+from .helpers import format_string
 
 def extract_orkg(datatype_id):
     part = datatype_id.split("/", 4)
@@ -8,14 +9,14 @@ def extract_orkg(datatype_id):
     def extractor_function(resource_id):
         info = request_dtr(orkg_hostname + "/api/templates/" + resource_id)
         schema_dict = {
-            "dt_name": info["label"],
+            "dt_name": format_string(info["label"]),
             "dt_id": info["id"],
             "dt_class": info["target_class"]["id"]}
         extracted = [[schema_dict]]
         all_props = []
         for prop in info.get("properties", []):
             specific_prop_dict = {
-                "dtp_name": prop["path"]["label"],
+                "dtp_name": format_string(prop["path"]["label"]),
                 "dtp_id": prop["path"]["id"],
                 "dtp_card_min": prop["min_count"],
                 "dtp_card_max": prop["max_count"]

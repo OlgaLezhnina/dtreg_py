@@ -1,5 +1,4 @@
 from .dtr_interface import select_dtr
-from .helpers import format_string
 from .helpers import get_prefix
 from types import SimpleNamespace
 
@@ -14,11 +13,11 @@ def write_objects(template_doi):
     prefix = get_prefix(template_doi)
     objects = {}
     for key in templ_info.keys():
-        dt_name = format_string(templ_info[key][0][0]["dt_name"])
+        dt_name = templ_info[key][0][0]["dt_name"]
         prop_list = [] 
         if len(templ_info[key][1]) != 0:
             for props in templ_info[key][1]:
-                prop_list.append(format_string(props["dtp_name"])) 
+                prop_list.append(props["dtp_name"]) 
         def __init__(self, *args, **kwargs):
             for dtp_name in self.prop_list:
                 setattr(self, dtp_name, kwargs.get(dtp_name))                

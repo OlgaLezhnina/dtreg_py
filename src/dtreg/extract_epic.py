@@ -1,12 +1,13 @@
 from .request_dtr import request_dtr
-from dtreg.helpers import range_split
+from .helpers import range_split
+from .helpers import format_string
 
 def extract_epic(datatype_id):
     extract_all = {}
     def extractor_function(datatype_id):
         info = request_dtr(datatype_id + "?locatt=view:json")
         schema_dict = {
-            "dt_name": info["name"],
+            "dt_name": format_string(info["name"]),
             "dt_id": info["Identifier"].split("/", 4)[1],
             "dt_class": info["Schema"]["Type"]}
         extracted = [[schema_dict]]
@@ -15,16 +16,16 @@ def extract_epic(datatype_id):
             if "Type" in prop:
                 card = range_split(prop["Properties"]["Cardinality"])
                 specific_prop_dict = {
-                    "dtp_name": prop["Name"],
-                    "dtp_id": info["Identifier"] + "#" + prop["Name"],
+                    "dtp_name": format_string(prop["Name"]),
+                    "dtp_id": info["Identifier"] + "#" + format_string(prop["Name"]),
                     "dtp_card_min": card["min"],
                     "dtp_card_max": card["max"],
                     "dtp_value_class": prop["Type"]}
                 extractor_function("https://doi.org/" + prop["Type"])
             else:        
                 specific_prop_dict = {
-                    "dtp_name": prop["Property"],
-                    "dtp_id": info["Identifier"] + "#" + prop["Property"],
+                    "dtp_name": format_string(prop["Property"]),
+                    "dtp_id": info["Identifier"] + "#" + format_string(prop["Property"]),
                     "dtp_card_min": None,
                     "dtp_card_max": None,
                     "dtp_value_class": prop["Value"]}   

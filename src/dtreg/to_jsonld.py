@@ -3,7 +3,7 @@ import pandas as pd
 import json
 
 
-def differ_type(input):
+def differ_input(input):
     if isinstance(input, pd.DataFrame):
         output = df_structure(input)    
     else:
@@ -62,7 +62,7 @@ def to_jsonld(instance):
             elif hasattr(instance_field, "prop_list"):
                 result[field] = write_info(instance_field)
             else: 
-                result[field] = differ_type(instance_field)
+                result[field] = differ_input(instance_field)
         return result
     result_all[instance.dt_name] = write_info(instance)
     result_all["@context"] = instance.add_context(instance.prefix)

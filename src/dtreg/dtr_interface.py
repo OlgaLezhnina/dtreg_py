@@ -22,6 +22,9 @@ class Epic:
     def add_dt_type(self, identifier):
         dt_type = "doi:" + identifier
         return dt_type  
+    def add_dtp_type(self, identifier):
+        dtp_type = "doi:" + identifier
+        return dtp_type 
 
 class Orkg:
     def get_template_info(self, template_doi):
@@ -35,6 +38,9 @@ class Orkg:
     def add_dt_type(self, identifier):
         dt_type = "orkgr:" + identifier
         return dt_type
+    def add_dtp_type(self, identifier):
+        dtp_type = "orkgp:" + identifier
+        return dtp_type 
       
 
 def select_dtr(template_doi):

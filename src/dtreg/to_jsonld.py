@@ -55,14 +55,16 @@ def to_jsonld(instance):
         "@type": instance.add_dt_type(instance.dt_id)}
         for field in instance.prop_list:
             instance_field = getattr(instance, field)
+            prop_id = next(item for item in instance.prop_info if item["dtp_name"] == field)["dtp_id"]
+            prop_type = instance.add_dtp_type(prop_id)
             if instance_field is None or instance_field is []:
                 pass
             elif isinstance(instance_field, list) and hasattr(instance_field[0], "prop_list"):
-                result[field] = list(map(write_info, instance_field))           
+                result[prop_type] = list(map(write_info, instance_field))           
             elif hasattr(instance_field, "prop_list"):
-                result[field] = write_info(instance_field)
+                result[prop_type] = write_info(instance_field)
             else: 
-                result[field] = differ_input(instance_field)
+                result[prop_type] = differ_input(instance_field)
         return result
     result_all[instance.dt_name] = write_info(instance)
     result_all["@context"] = instance.add_context(instance.prefix)

@@ -28,7 +28,8 @@ def write_objects(template_doi):
                   "dt_name": dt_name, 
                   "dt_id": templ_info[key][0][0]["dt_id"] ,
                   "dt_class": templ_info[key][0][0]["dt_class"],
-                  "prop_list":prop_list,
+                  "prop_list": prop_list,
+                  "prop_info": templ_info[key][1],
                   "__init__": __init__}) 
         objects.update({dt_name: class_object})
     return objects

@@ -24,7 +24,23 @@ class Epic:
         return dt_type  
     def add_dtp_type(self, identifier):
         dtp_type = "doi:" + identifier
-        return dtp_type 
+        return dtp_type
+    def add_df_constants(self):
+        df_constants = {
+            "table": "doi:0424f6e7026fa4bc2c4a",
+            "columns_p": "doi:0424f6e7026fa4bc2c4a#columns",
+            "column": "doi:65ba00e95e60fb8971e6",
+            "col_number_p": "doi:65ba00e95e60fb8971e6#number",
+            "col_titles_p": "doi:65ba00e95e60fb8971e6#titles",
+            "rows_p": "doi:0424f6e7026fa4bc2c4a#rows",
+            "row": "doi:9bf7a8e8909bfd491b38",
+            "row_number_p": "doi:9bf7a8e8909bfd491b38#number",
+            "row_titles_p": "doi:9bf7a8e8909bfd491b38#titles",
+            "cells_p": "doi:9bf7a8e8909bfd491b38#cells",
+            "cell": "doi:4607bc7c42ac8db29bfc",
+            "column_p": "doi:4607bc7c42ac8db29bfc#column",
+            "value_p": "doi:4607bc7c42ac8db29bfc#value"}
+        return df_constants
 
 class Orkg:
     def get_template_info(self, template_doi):
@@ -32,6 +48,7 @@ class Orkg:
         return template_info
     def add_context(self, prefix):
         context_info = {
+            "orkgc": prefix + "class/",
             "orkgr": prefix + "resource/",
             "orkgp": prefix + "property/"}
         return context_info  
@@ -40,7 +57,23 @@ class Orkg:
         return dt_type
     def add_dtp_type(self, identifier):
         dtp_type = "orkgp:" + identifier
-        return dtp_type 
+        return dtp_type
+    def add_df_constants(self):
+        df_constants = {
+            "table": "orkgc:Table",
+            "columns_p": "orkgp:CSVW_Columns",
+            "column": "orkgc:Column",
+            "col_number_p": "orkgp:CSVW_Number",
+            "col_titles_p": "orkgp:CSVW_Titles",
+            "rows_p": "orkgp:CSVW_Rows",
+            "row": "orkgc:Row",
+            "row_number_p": "orkgp:CSVW_Number",
+            "row_titles_p": "orkgp:CSVW_Titles",
+            "cells_p": "orkgp:CSVW_Cells",
+            "cell": "orkgc:Cell",
+            "column_p": "orkgp:CSVW_Column",
+            "value_p": "orkgp:CSVW_Value"}
+        return df_constants
       
 
 def select_dtr(template_doi):

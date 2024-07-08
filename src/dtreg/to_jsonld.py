@@ -12,14 +12,15 @@ def differ_input(input):
 
 def df_structure(df):
   global uid
+  global constants
   result = {}  
-  result["@type"] = "https://doi.org/21.T11969/0424f6e7026fa4bc2c4a"
+  result["@type"] = constants["table"]
   result["label"] = df.name if hasattr(df, "name") else "Table"  
   column_ids = []
   result["columns"] = []
   for i, col in enumerate(df.columns):  
     column = {
-      "@type": "https://doi.org/21.T11969/65ba00e95e60fb8971e6",
+      "@type": constants["column"],
       "titles": col,
       "number": i + 1,
       "@id":"_:n" + str(uid())
@@ -29,14 +30,14 @@ def df_structure(df):
   result["rows"] = []
   for i, ro in df.iterrows():
     row = {
-      "@type": "https://doi.org/21.T11969/9bf7a8e8909bfd491b38",
+      "@type": constants["row"],
       "number": i + 1,
-      "titles": str(i),
+      "titles": str(i + 1),
       "cells": []
     }
     for j, cel_val in enumerate(ro): 
       row["cells"].append({
-        "@type":"https://doi.org/21.T11969/4607bc7c42ac8db29bfc",
+        "@type": constants["cell"],
         "value": str(cel_val) if not pd.isna(cel_val) else None,          
         "column": column_ids[j]
       })     
@@ -49,6 +50,8 @@ def to_jsonld(instance):
     result_all = {}
     global uid
     uid = generate_uid()
+    global constants
+    constants = instance.add_df_constants()
     def write_info(instance):
         result = {
         "@id": "_:n" + str(uid()),

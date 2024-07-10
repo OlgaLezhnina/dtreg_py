@@ -1,25 +1,25 @@
-def format_string(text):
-  return text.lower().replace(" ", "_").replace("-", "_")
+def format_string(string):
+  return string.lower().replace(" ", "_").replace("-", "_")
 
-def get_prefix(string):
-    part = string.split("/", 4)
-    if "orkg.org" in string.split("/", 4)[2]:
+def get_prefix(url_string):
+    part = url_string.split("/", 4)
+    if "orkg.org" in url_string.split("/", 4)[2]:
         prefix = part[0] + "//" + part[2] + "/"
-    elif string.split("/", 4)[3] == '21.T11969':
+    elif url_string.split("/", 4)[3] == '21.T11969':
         prefix = part[0] + "//" + part[2] + "/" + part[3] + "/"
     return prefix
 
-def range_split(range_str):
-    range_parts = range_str.split(" - ")
-    if len(range_parts) == 1:
-        output = {
-            "min": int(range_str),
-            "max": int(range_str)}
+def specify_cardinality(cardinality_string):
+    card_parts = cardinality_string.split(" - ")
+    if len(card_parts) == 1:
+        min_max = {
+            "min": int(cardinality_string),
+            "max": int(cardinality_string)}
     else:
-        output = {
-            "min": int(range_parts[0]),
-            "max": None if range_parts[1] == "n" else int(range_parts[1])}
-    return output        
+        min_max = {
+            "min": int(card_parts[0]),
+            "max": None if card_parts[1] == "n" else int(card_parts[1])}
+    return min_max        
 
 def generate_uid():
     i = 0

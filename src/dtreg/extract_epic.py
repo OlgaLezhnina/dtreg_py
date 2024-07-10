@@ -1,5 +1,5 @@
 from .request_dtr import request_dtr
-from .helpers import range_split
+from .helpers import specify_cardinality
 from .helpers import format_string
 
 def extract_epic(datatype_id):
@@ -14,7 +14,7 @@ def extract_epic(datatype_id):
         all_props = []
         for prop in info["Schema"].get("Properties", []):
             if "Type" in prop:
-                card = range_split(prop["Properties"]["Cardinality"])
+                card = specify_cardinality(prop["Properties"]["Cardinality"])
                 specific_prop_dict = {
                     "dtp_name": format_string(prop["Name"]),
                     "dtp_id": info["Identifier"] + "#" + format_string(prop["Name"]),

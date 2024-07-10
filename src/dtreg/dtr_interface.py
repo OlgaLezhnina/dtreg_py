@@ -17,7 +17,16 @@ class Epic:
         return template_info       
     def add_context(self, prefix):
         context_info = {
-            "doi": prefix}
+            "doi": prefix,
+            "columns": prefix + "0424f6e7026fa4bc2c4a#columns",
+            "col_number":  prefix + "65ba00e95e60fb8971e6#number",
+            "col_titles":  prefix + "65ba00e95e60fb8971e6#titles",
+            "rows":  prefix + "0424f6e7026fa4bc2c4a#rows",
+            "row_number":  prefix + "9bf7a8e8909bfd491b38#number",
+            "row_titles":  prefix + "9bf7a8e8909bfd491b38#titles",
+            "cells":  prefix + "9bf7a8e8909bfd491b38#cells",
+            "column":  prefix + "4607bc7c42ac8db29bfc#column",
+            "value":  prefix + "4607bc7c42ac8db29bfc#value"}
         return context_info  
     def add_dt_type(self, identifier):
         dt_type = "doi:" + identifier
@@ -28,18 +37,9 @@ class Epic:
     def add_df_constants(self):
         df_constants = {
             "table": "doi:0424f6e7026fa4bc2c4a",
-            "columns_p": "doi:0424f6e7026fa4bc2c4a#columns",
-            "column": "doi:65ba00e95e60fb8971e6",
-            "col_number_p": "doi:65ba00e95e60fb8971e6#number",
-            "col_titles_p": "doi:65ba00e95e60fb8971e6#titles",
-            "rows_p": "doi:0424f6e7026fa4bc2c4a#rows",
+            "column": "doi:65ba00e95e60fb8971e6",            
             "row": "doi:9bf7a8e8909bfd491b38",
-            "row_number_p": "doi:9bf7a8e8909bfd491b38#number",
-            "row_titles_p": "doi:9bf7a8e8909bfd491b38#titles",
-            "cells_p": "doi:9bf7a8e8909bfd491b38#cells",
-            "cell": "doi:4607bc7c42ac8db29bfc",
-            "column_p": "doi:4607bc7c42ac8db29bfc#column",
-            "value_p": "doi:4607bc7c42ac8db29bfc#value"}
+            "cell": "doi:4607bc7c42ac8db29bfc"}
         return df_constants
 
 class Orkg:
@@ -50,7 +50,16 @@ class Orkg:
         context_info = {
             "orkgc": prefix + "class/",
             "orkgr": prefix + "resource/",
-            "orkgp": prefix + "property/"}
+            "orkgp": prefix + "property/",
+            "columns": prefix + "property/" + "CSVW_Columns",
+            "col_number": prefix + "property/" + "CSVW_Number",
+            "col_titles": prefix + "property/" + "CSVW_Titles",
+            "rows": prefix + "property/" + "CSVW_Rows",
+            "row_number": prefix + "property/" + "CSVW_Number",
+            "row_titles": prefix + "property/" + "CSVW_Titles",
+            "cells": prefix + "property/" + "CSVW_Cells",
+            "column": prefix + "property/" + "CSVW_Column",
+            "value": prefix + "property/" + "CSVW_Value"}
         return context_info  
     def add_dt_type(self, identifier):
         dt_type = "orkgr:" + identifier
@@ -61,18 +70,9 @@ class Orkg:
     def add_df_constants(self):
         df_constants = {
             "table": "orkgc:Table",
-            "columns_p": "orkgp:CSVW_Columns",
             "column": "orkgc:Column",
-            "col_number_p": "orkgp:CSVW_Number",
-            "col_titles_p": "orkgp:CSVW_Titles",
-            "rows_p": "orkgp:CSVW_Rows",
             "row": "orkgc:Row",
-            "row_number_p": "orkgp:CSVW_Number",
-            "row_titles_p": "orkgp:CSVW_Titles",
-            "cells_p": "orkgp:CSVW_Cells",
-            "cell": "orkgc:Cell",
-            "column_p": "orkgp:CSVW_Column",
-            "value_p": "orkgp:CSVW_Value"}
+            "cell": "orkgc:Cell"}
         return df_constants
       
 

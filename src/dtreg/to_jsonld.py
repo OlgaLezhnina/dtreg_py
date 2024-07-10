@@ -21,18 +21,20 @@ def df_structure(df):
   for i, col in enumerate(df.columns):  
     column = {
       "@type": constants["column"],
-      "titles": col,
-      "number": i + 1,
+      "col_titles": col,
+      "col_number": i + 1,
       "@id":"_:n" + str(uid())
     }
     column_ids.append(column["@id"])
     result["columns"].append(column)
   result["rows"] = []
+  row_count = 0
   for i, ro in df.iterrows():
+    row_count +=1  
     row = {
       "@type": constants["row"],
-      "number": i + 1,
-      "titles": str(i + 1),
+      "row_number": row_count,
+      "row_titles": str(i),
       "cells": []
     }
     for j, cel_val in enumerate(ro): 

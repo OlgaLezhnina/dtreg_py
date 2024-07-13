@@ -3,6 +3,34 @@ import pandas as pd
 import json
 
 
+def to_jsonld(instance):
+    result_all = {}
+    global uid
+    uid = generate_uid()
+    global constants
+    constants = instance.add_df_constants()
+    def write_info(instance):
+        result = {
+        "@id": "_:n" + str(uid()),
+        "@type": instance.add_dt_type(instance.dt_id)}
+        for field in instance.prop_list:
+            instance_field = getattr(instance, field)
+            prop_id = next(item for item in instance.prop_info if item["dtp_name"] == field)["dtp_id"]
+            prop_type = instance.add_dtp_type(prop_id)
+            if instance_field is None or instance_field is []:
+                pass
+            elif isinstance(instance_field, list) and hasattr(instance_field[0], "prop_list"):
+                result[prop_type] = list(map(write_info, instance_field))           
+            elif hasattr(instance_field, "prop_list"):
+                result[prop_type] = write_info(instance_field)
+            else: 
+                result[prop_type] = differ_input(instance_field)
+        return result
+    result_all[instance.dt_name] = write_info(instance)
+    result_all["@context"] = instance.add_context(instance.prefix)
+    result_json = json.dumps(result_all, indent = 2)
+    return result_json
+
 def differ_input(input):
     if isinstance(input, pd.DataFrame):
         output = df_structure(input)    
@@ -45,33 +73,4 @@ def df_structure(df):
       })     
     result["rows"].append(row)
   result["@id"] = "_:n" + str(uid()) 
-  return(result)
-
-    
-def to_jsonld(instance):
-    result_all = {}
-    global uid
-    uid = generate_uid()
-    global constants
-    constants = instance.add_df_constants()
-    def write_info(instance):
-        result = {
-        "@id": "_:n" + str(uid()),
-        "@type": instance.add_dt_type(instance.dt_id)}
-        for field in instance.prop_list:
-            instance_field = getattr(instance, field)
-            prop_id = next(item for item in instance.prop_info if item["dtp_name"] == field)["dtp_id"]
-            prop_type = instance.add_dtp_type(prop_id)
-            if instance_field is None or instance_field is []:
-                pass
-            elif isinstance(instance_field, list) and hasattr(instance_field[0], "prop_list"):
-                result[prop_type] = list(map(write_info, instance_field))           
-            elif hasattr(instance_field, "prop_list"):
-                result[prop_type] = write_info(instance_field)
-            else: 
-                result[prop_type] = differ_input(instance_field)
-        return result
-    result_all[instance.dt_name] = write_info(instance)
-    result_all["@context"] = instance.add_context(instance.prefix)
-    result_json = json.dumps(result_all, indent = 2)
-    return result_json
+  return(result)   

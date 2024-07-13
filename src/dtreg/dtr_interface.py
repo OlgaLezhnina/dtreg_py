@@ -77,7 +77,8 @@ class Orkg:
             "row_titles": prefix + "property/" + "CSVW_Titles",
             "cells": prefix + "property/" + "CSVW_Cells",
             "column": prefix + "property/" + "CSVW_Column",
-            "value": prefix + "property/" + "CSVW_Value"}
+            "value": prefix + "property/" + "CSVW_Value",
+            "label": "http://www.w3.org/2000/01/rdf-schema#label"}
         return context_info  
     def add_dt_type(self, identifier):
         dt_type = "orkgr:" + identifier

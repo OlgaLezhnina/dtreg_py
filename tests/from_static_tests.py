@@ -7,10 +7,10 @@ class TestFromStatic(unittest.TestCase):
         self.assertEqual(no_static, None)
 
     def test_static(self):
-        templ = from_static("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
-        expected = {'pidinst_schemaobject': [[{'dt_name': 'pidinst_schemaobject',
-            'dt_id': '1ea0e148d9bbe08335cd',
-            'dt_class': 'Object'}],
+        templ = from_static("https://doi.org/21.T11969/3df63b7acb0522da685d")
+        expected = {'string': [[{'dt_name': 'string',
+            'dt_id': '3df63b7acb0522da685d',
+            'dt_class': 'String'}],
           []]}
         self.assertEqual(templ, expected)
         

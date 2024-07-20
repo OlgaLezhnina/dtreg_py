@@ -2,8 +2,10 @@ from .request_dtr import request_dtr
 from .helpers import specify_cardinality
 from .helpers import format_string
 
+
 def extract_epic(datatype_id):
     extract_all = {}
+
     def extractor_function(datatype_id):
         info = request_dtr(datatype_id + "?locatt=view:json")
         schema_dict = {
@@ -22,15 +24,15 @@ def extract_epic(datatype_id):
                     "dtp_card_max": card["max"],
                     "dtp_value_class": prop["Type"]}
                 extractor_function("https://doi.org/" + prop["Type"])
-            else:        
+            else:
                 specific_prop_dict = {
                     "dtp_name": format_string(prop["Property"]),
                     "dtp_id": info["Identifier"] + "#" + format_string(prop["Property"]),
                     "dtp_card_min": None,
                     "dtp_card_max": None,
-                    "dtp_value_class": prop["Value"]}   
+                    "dtp_value_class": prop["Value"]}
             all_props.append(specific_prop_dict)
         extracted.append(all_props)
-        extract_all[schema_dict["dt_name"]] = list(extracted) 
+        extract_all[schema_dict["dt_name"]] = list(extracted)
     extractor_function(datatype_id)
     return(extract_all)

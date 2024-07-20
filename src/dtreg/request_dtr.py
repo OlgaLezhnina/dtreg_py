@@ -1,4 +1,6 @@
 import requests
+
+
 def request_dtr(route):
     """Request a dtr API
     """

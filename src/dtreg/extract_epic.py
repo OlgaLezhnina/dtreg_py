@@ -4,6 +4,12 @@ from .helpers import format_string
 
 
 def extract_epic(datatype_id):
+    """
+    Extract ePIC schema information
+
+    :param datatype_id: the identifier of an ePIC schema
+    :return: the dictionary with the structured information of the ePIC schema
+    """
     extract_all = {}
 
     def extractor_function(datatype_id):

@@ -3,6 +3,12 @@ from .helpers import format_string
 
 
 def extract_orkg(datatype_id):
+    """
+    Extract eORKG template information
+
+    :param datatype_id: the identifier of an ORKG template
+    :return: the dictionary with the structured information of the ORKG template
+    """
     part = datatype_id.split("/", 4)
     orkg_hostname = part[0] + "//" + part[2]
     resource_id = part[4]

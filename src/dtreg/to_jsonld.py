@@ -7,6 +7,12 @@ uid = None
 
 
 def to_jsonld(instance):
+    """
+    Write an instance into JSON-LD file
+
+    :param instance: an instance of a datatype-related class
+    :return: JSON string in JSON-LD format
+    """
     result_all = {}
     global uid
     uid = generate_uid()
@@ -38,6 +44,12 @@ def to_jsonld(instance):
 
 
 def differ_input(input):
+    """
+    Differentiate input for further use by to_jsonld function
+
+    :param input: an object to be differentiated as a dataframe or another type
+    :return: the result of calling the df_structure function, or the input unchanged
+    """
     if isinstance(input, pd.DataFrame):
         output = df_structure(input)
     else:
@@ -46,6 +58,12 @@ def differ_input(input):
 
 
 def df_structure(df):
+    """
+    Prepare a dataframe for to_jsonld function
+
+    :param df: a dataframe
+    :return: a dictionary to be used by to_jsonld function
+    """
     global uid
     global constants
     result = {}

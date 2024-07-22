@@ -15,9 +15,9 @@ from dtreg.load_datatype import load_datatype
 from dtreg.to_jsonld import to_jsonld
 ## load the datatype schema you need
 dt = load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-## check the schema names to select the one(s) you intend to use
+## look at schemata to select the one(s) you intend to use
 dt.__dict__.keys() 
-## for the schema you use, e.g., dt.inferential_test_output, check the fields names
+## check available fields for your schema
 dt.inferential_test_output.prop_list 
 ## create your instance by filling the fields of your choice
 my_inst = dt.inferential_test_output(label = "my_results")

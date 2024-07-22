@@ -5,6 +5,12 @@ from .from_static import from_static
 
 
 def select_dtr(datatype_id):
+    """
+    Select a dtr-related class based on the identifier
+
+    :param datatype_id: the identifier of a datatype, such as URL
+    :return: a class for the specific datatype registry
+    """
     selected_class = None
     if datatype_id.split("/", 4)[3] == '21.T11969':
         selected_class = Epic

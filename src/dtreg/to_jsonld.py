@@ -81,13 +81,11 @@ def df_structure(df):
         column_ids.append(column["@id"])
         result["columns"].append(column)
     result["rows"] = []
-    row_count = 0
-    for i, ro in df.iterrows():
-        row_count += 1
+    for i, (title, ro) in enumerate(df.iterrows()):
         row = {
             "@type": constants["row"],
-            "row_number": row_count,
-            "row_titles": str(i),
+            "row_number": i + 1,
+            "row_titles": str(title),
             "cells": []
         }
         for j, cel_val in enumerate(ro):

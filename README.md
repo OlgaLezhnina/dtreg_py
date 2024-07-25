@@ -7,10 +7,10 @@ Finally, the instance can be written as a machine-actionable JSON-LD file.
 ## Example
 
 This example shows you how to work with a DTR schema; you need to know the schema identifier.
-As an example, the ePIC datatype with the DOI “<https://doi.org/21.T11969/74bc7748b8cd520908bc>" is used.
-For the ORKG, please use the ORKG template URL, such as “<https://incubating.orkg.org/template/R855534>".
+As an example, the ePIC datatype with the DOI <https://doi.org/21.T11969/74bc7748b8cd520908bc> is used.
+For the ORKG, please use the ORKG template URL, such as <https://incubating.orkg.org/template/R855534>.
 
-```{python}
+```python
 ## import functions from the dtreg
 from dtreg.load_datatype import load_datatype
 from dtreg.to_jsonld import to_jsonld

@@ -1,9 +1,9 @@
 # dtreg
-The goal of dtreg is to help the users interact with various data type registries (DTRs) and create machine-actionable data. 
+The goal of dtreg is to help the users interact with various data type registries (DTRs) and create machine-readable data. 
 Currently, we support the [ePIC](https://fc4e-t4-3.github.io/) and the [ORKG](https://orkg.org/) DTRs.
 * First, load a DTR schema (an ePIC datatype or an ORKG template) as a Python object.
 * Then, create a new instance of the schema by filling in the relevant fields.
-* Finally, write the instance as a machine-actionable JSON-LD file. 
+* Finally, write the instance as a machine-readable JSON-LD file. 
 ## Example
 
 This example shows you how to work with a DTR schema; you need to know the schema identifier.

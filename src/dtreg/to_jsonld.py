@@ -74,8 +74,8 @@ def df_structure(df):
     for i, col in enumerate(df.columns):
         column = {
             "@type": constants["column"],
-            "col_titles": col,
             "col_number": i + 1,
+            "col_titles": col,
             "@id": "_:n" + str(uid())
         }
         column_ids.append(column["@id"])
@@ -86,11 +86,13 @@ def df_structure(df):
             "@type": constants["row"],
             "row_number": i + 1,
             "row_titles": str(title),
+            "@id": "_:n" + str(uid()),
             "cells": []
         }
         for j, cel_val in enumerate(ro):
             row["cells"].append({
                 "@type": constants["cell"],
+                "@id": "_:n" + str(uid()),
                 "value": str(cel_val) if not pd.isna(cel_val) else None,
                 "column": column_ids[j]
             })

@@ -41,6 +41,12 @@ def extract_orkg(datatype_id):
                     if nested_name not in extract_all:
                         extractor_function(nested_id)
             all_props.append(specific_prop_dict)
+        all_props.append({
+            "dtp_name": "label",
+            "dtp_id": "XXX",
+            "dtp_card_min": 0,
+            "dtp_card_max": 1,
+            "dtp_value_class": "string"})
         extracted.append(all_props)
         extract_all[schema_dict["dt_name"]] = list(extracted)
     extractor_function(resource_id)

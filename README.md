@@ -15,6 +15,8 @@ For the ORKG, please use the ORKG template URL, such as <https://incubating.orkg
 ## import functions from the dtreg
 from dtreg.load_datatype import load_datatype
 from dtreg.to_jsonld import to_jsonld
+## import pandas if we want to a dataframe
+import pandas as pd
 ## load the schema with the known identifier
 dt = load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
 ## look at the schemata you might need to use

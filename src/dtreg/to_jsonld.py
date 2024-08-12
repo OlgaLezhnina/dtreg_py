@@ -68,7 +68,7 @@ def df_structure(df):
     global constants
     result = {}
     result["@type"] = constants["table"]
-    result["label"] = df.name if hasattr(df, "name") else "Table"
+    result["tab_label"] = df.name if hasattr(df, "name") else "Table"
     column_ids = []
     result["columns"] = []
     for i, col in enumerate(df.columns):

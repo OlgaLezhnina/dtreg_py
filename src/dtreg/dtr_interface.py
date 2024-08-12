@@ -109,7 +109,8 @@ class Epic:
             "row_titles":  prefix + "9bf7a8e8909bfd491b38#titles",
             "cells":  prefix + "9bf7a8e8909bfd491b38#cells",
             "column":  prefix + "4607bc7c42ac8db29bfc#column",
-            "value":  prefix + "4607bc7c42ac8db29bfc#value"}
+            "value":  prefix + "4607bc7c42ac8db29bfc#value",
+            "tab_label": prefix + "0424f6e7026fa4bc2c4a#label"}
         return context_info
 
     def add_dt_type(self, identifier):
@@ -182,7 +183,8 @@ class Orkg:
             "cells": prefix + "property/" + "CSVW_Cells",
             "column": prefix + "property/" + "CSVW_Column",
             "value": prefix + "property/" + "CSVW_Value",
-            "label": "http://www.w3.org/2000/01/rdf-schema#label"}
+            "label": "http://www.w3.org/2000/01/rdf-schema#label",
+            "tab_label": "http://www.w3.org/2000/01/rdf-schema#label"}
         return context_info
 
     def add_dt_type(self, identifier):

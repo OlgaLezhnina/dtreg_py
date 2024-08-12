@@ -43,7 +43,7 @@ def extract_orkg(datatype_id):
             all_props.append(specific_prop_dict)
         all_props.append({
             "dtp_name": "label",
-            "dtp_id": "XXX",
+            "dtp_id": "label",
             "dtp_card_min": 0,
             "dtp_card_max": 1,
             "dtp_value_class": "string"})

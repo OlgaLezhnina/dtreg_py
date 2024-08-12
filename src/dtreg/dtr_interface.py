@@ -202,7 +202,7 @@ class Orkg:
         :param identifier: the ORKG property identifier
         :return: property type to include in JSON-LD file
         """
-        dtp_type = "orkgp:" + identifier
+        dtp_type = identifier if identifier == "label" else "orkgp:" + identifier
         return dtp_type
 
     def add_df_constants(self):

@@ -9,7 +9,12 @@ class TestExtractOrkg(unittest.TestCase):
         expected = {'measurement_scale': [[{'dt_name': 'measurement_scale',
                                             'dt_id': 'R937648',
                                             'dt_class': 'C75002'}],
-                                          []]}
+                                          [{
+                                              "dtp_name": "label",
+                                              "dtp_id": "label",
+                                              "dtp_card_min": 0,
+                                              "dtp_card_max": 1,
+                                              "dtp_value_class": "string"}]]}
         self.assertEqual(result, expected)
 
     def test_extract_orkg_props(self):

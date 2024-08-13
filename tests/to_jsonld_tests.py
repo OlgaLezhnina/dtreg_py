@@ -21,7 +21,7 @@ class TestJsonLd(unittest.TestCase):
         with patch('dtreg.to_jsonld.constants', new_constants):
             with patch('dtreg.to_jsonld.uid', new_uid):
                 result = differ_input(df)
-                self.assertEqual(result["label"], "Table")
+                self.assertEqual(result["tab_label"], "Table")
 
     def test_input_named_df(self):
         df = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
@@ -31,7 +31,7 @@ class TestJsonLd(unittest.TestCase):
         with patch('dtreg.to_jsonld.constants', new_constants):
             with patch('dtreg.to_jsonld.uid', new_uid):
                 result = differ_input(df)
-                self.assertEqual(result["label"], "my_results")
+                self.assertEqual(result["tab_label"], "my_results")
 
     def test_missing_df(self):
         df = pd.DataFrame({'A': [None, 2], 'B': [3, 4]})

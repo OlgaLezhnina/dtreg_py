@@ -98,4 +98,4 @@ def df_structure(df):
             })
         result["rows"].append(row)
     result["@id"] = "_:n" + str(uid())
-    return(result)
+    return result

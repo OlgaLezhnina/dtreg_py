@@ -50,4 +50,4 @@ def extract_orkg(datatype_id):
         extracted.append(all_props)
         extract_all[schema_dict["dt_name"]] = list(extracted)
     extractor_function(resource_id)
-    return(extract_all)
+    return extract_all

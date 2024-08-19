@@ -4,7 +4,7 @@ import pandas as pd
 from dtreg.load_datatype import load_datatype
 from dtreg.dtr_interface import Epic
 from dtreg.helpers import generate_uid
-from dtreg.to_jsonld import differ_input, df_structure, to_jsonld, constants, uid
+from dtreg.to_jsonld import differ_input, to_jsonld
 
 
 class TestJsonLd(unittest.TestCase):

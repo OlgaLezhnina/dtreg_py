@@ -7,7 +7,7 @@ Currently, we support the [ePIC](https://fc4e-t4-3.github.io/) and the [ORKG](ht
 ## Example
 
 This example shows you how to work with a DTR schema.
-You need to know the schema identifier (see the [help page](https://orkg.org/help-center/article/47/reborn_articles) ).
+You need to know the schema identifier; see the [help page](https://orkg.org/help-center/article/47/reborn_articles).
 For instance, the schema “inferential test output” requires the ePIC datatype with the DOI <https://doi.org/21.T11969/74bc7748b8cd520908bc>.
 For the ORKG, please use the ORKG template URL, such as <https://incubating.orkg.org/template/R855534>.
 

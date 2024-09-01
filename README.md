@@ -35,5 +35,10 @@ my_inst = dt.inferential_test_output(label = my_label,
                                      has_format = my_df)
 ## write the instance in JSON-LD format
 my_json = to_jsonld(my_inst) 
+
+## the result can be saved as a JSON file
+with open('my_file.json', 'w') as f:
+    f.write(my_json)
+
 ```
 For more information, please see the [help page](https://orkg.org/help-center/article/47/reborn_articles).

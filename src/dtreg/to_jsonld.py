@@ -1,6 +1,7 @@
 from .helpers import generate_uid
 import pandas as pd
 import json
+from inspect import isfunction
 
 constants = None
 uid = None
@@ -30,6 +31,8 @@ def to_jsonld(instance):
             prop_type = instance.add_dtp_type(prop_id)
             if instance_field is None or instance_field is []:
                 pass
+            elif isfunction(instance_field):
+                print("Input in " + field + " should not be a function")
             elif isinstance(instance_field, list) and hasattr(instance_field[0], "prop_list"):
                 result[prop_type] = list(map(write_info, instance_field))
             elif hasattr(instance_field, "prop_list"):

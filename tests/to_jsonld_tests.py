@@ -42,6 +42,15 @@ class TestJsonLd(unittest.TestCase):
                 result = differ_input(df)
                 self.assertEqual(result["rows"][0]["cells"][0]["value"], None)
 
+    def test_no_function(self):
+        def abc(x):
+            return x+1
+        dt = load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+        instance = dt.inferential_test_output(has_format=abc)
+        to_jsonld(instance)
+        self.assertRaisesRegex(
+            ValueError, "SystemExit: Input in  has_format  should not be a function")
+
     def test_jsonld_epic_nested(self):
         dt = load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
         table = dt.table(label="Table")

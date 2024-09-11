@@ -23,6 +23,11 @@ class TestExtractOrkg(unittest.TestCase):
         expected = "dict_values(['has_format', 'P114000', 1, None, 'Table'])"
         self.assertEqual(str(values), expected)
 
+    def test_extract_orkg_nested(self):
+        schema = extract_orkg("https://incubating.orkg.org/template/R903086")
+        expected = "dict_keys(['statistical_variable', 'sample_size', 'data_input'])"
+        self.assertEqual(str(schema.keys()), expected)
+
 
 if __name__ == '__main__':
     unittest.main()

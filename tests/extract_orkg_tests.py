@@ -14,7 +14,7 @@ class TestExtractOrkg(unittest.TestCase):
                                               "dtp_id": "label",
                                               "dtp_card_min": 0,
                                               "dtp_card_max": 1,
-                                              "dtp_value_class": "string"}]]}
+                                              "dtp_value_type": "string"}]]}
         self.assertEqual(result, expected)
 
     def test_extract_orkg_props(self):

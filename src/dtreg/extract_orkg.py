@@ -4,10 +4,10 @@ from .helpers import format_string
 
 def extract_orkg(datatype_id):
     """
-    Extract eORKG template information
+    Extract ORKG template information
 
-    :param datatype_id: the identifier of an ORKG template
-    :return: the dictionary with the structured information of the ORKG template
+    :param datatype_id: an identifier of an ORKG template
+    :return: a dictionary with structured information of the ORKG template
     """
     part = datatype_id.split("/", 4)
     orkg_hostname = part[0] + "//" + part[2]
@@ -30,9 +30,9 @@ def extract_orkg(datatype_id):
                 "dtp_card_max": prop["max_count"]
             }
             if "class" not in prop:
-                specific_prop_dict["dtp_value_class"] = prop["datatype"]["id"]
+                specific_prop_dict["dtp_value_type"] = prop["datatype"]["id"]
             else:
-                specific_prop_dict["dtp_value_class"] = prop["class"]["id"]
+                specific_prop_dict["dtp_value_type"] = prop["class"]["id"]
                 info_n = request_dtr(
                     orkg_hostname + "/api/templates/?target_class=" + prop["class"]["id"])
                 if len(info_n["content"]) > 0:
@@ -46,7 +46,7 @@ def extract_orkg(datatype_id):
             "dtp_id": "label",
             "dtp_card_min": 0,
             "dtp_card_max": 1,
-            "dtp_value_class": "string"})
+            "dtp_value_type": "string"})
         extracted.append(all_props)
         extract_all[schema_dict["dt_name"]] = list(extracted)
     extractor_function(resource_id)

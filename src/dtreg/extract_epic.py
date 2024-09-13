@@ -5,10 +5,10 @@ from .helpers import format_string
 
 def extract_epic(datatype_id):
     """
-    Extract ePIC schema information
+    Extract ePIC datatype information
 
-    :param datatype_id: the identifier of an ePIC schema
-    :return: the dictionary with the structured information of the ePIC schema
+    :param datatype_id: an identifier of an ePIC datatype
+    :return: a dictionary with structured information of the ePIC datatype
     """
     extract_all = {}
 
@@ -28,7 +28,7 @@ def extract_epic(datatype_id):
                     "dtp_id": info["Identifier"] + "#" + format_string(prop["Name"]),
                     "dtp_card_min": card["min"],
                     "dtp_card_max": card["max"],
-                    "dtp_value_class": prop["Type"]}
+                    "dtp_value_type": prop["Type"]}
                 extractor_function("https://doi.org/" + prop["Type"])
             else:
                 specific_prop_dict = {
@@ -36,7 +36,7 @@ def extract_epic(datatype_id):
                     "dtp_id": info["Identifier"] + "#" + format_string(prop["Property"]),
                     "dtp_card_min": None,
                     "dtp_card_max": None,
-                    "dtp_value_class": prop["Value"]}
+                    "dtp_value_type": prop["Value"]}
             all_props.append(specific_prop_dict)
         extracted.append(all_props)
         extract_all[schema_dict["dt_name"]] = list(extracted)

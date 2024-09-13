@@ -9,6 +9,9 @@ authors = [
     {name = "Manuel Prinz", email = "manuel.prinz@tib.eu"},
     {name = "Markus Stocker", email = "markus.stocker@tib.eu"},
 ]
+maintainers = [
+    {name = "Olga Lezhnina", email = "olga.lezhnina@tib.eu"}
+]
 description = "Interact with Data Type Registries and Create Machine Actionable Data"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -16,12 +19,17 @@ keywords = ["data type registry", "schema", "JSON-LD"]
 license = {text = "MIT"}
 classifiers = [
     "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
 ]
 dependencies = [
     "importlib_resources",
     "requests",    
 ]
 dynamic = ["version"]
+
+[project.urls]
+Repository = "https://gitlab.com/TIBHannover/orkg/dtreg-python"
+Changelog = "https://gitlab.com/TIBHannover/orkg/dtreg-python/-/blob/master/CHANGELOG.md"
 
 [tool.setuptools]
 include-package-data = true

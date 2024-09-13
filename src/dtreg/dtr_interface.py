@@ -6,10 +6,10 @@ from .from_static import from_static
 
 def select_dtr(datatype_id):
     """
-    Select a dtr-related class based on the identifier
+    Select a dtr-related class based on a schema identifier
 
-    :param datatype_id: the identifier of a datatype, such as URL
-    :return: a class for the specific datatype registry
+    :param datatype_id: a schema identifier
+    :return: a class related to the datatype registry
     """
     selected_class = None
     if datatype_id.split("/", 4)[3] == '21.T11969':
@@ -23,14 +23,14 @@ def select_dtr(datatype_id):
 
 class DataTypeReg(Protocol):
     """
-    Interface representing a datatype registry
+    Interface for a class representing a datatype registry
     """
 
     def get_schema_info(self, datatype_id):
         """
-        Obtain information from a datatype schema
+        Obtain information from a schema
 
-        :param datatype_id: the identifier of a datatype
+        :param datatype_id: a schema identifier
         :return: not implemented, this is an interface
         """
         pass
@@ -40,7 +40,7 @@ class DataTypeReg(Protocol):
         Write dtr-specific context for JSON-LD
         The dtr-specific information is provided by the dtr
 
-        :param prefix: the URL prefix
+        :param prefix: A URL prefix
         :return: not implemented, this is an interface
         """
         pass
@@ -49,7 +49,7 @@ class DataTypeReg(Protocol):
         """
         Write schema type for JSON-LD
 
-        :param identifier: the schema identifier
+        :param identifier: a schema identifier
         :return: not implemented, this is an interface
         """
         pass
@@ -58,7 +58,7 @@ class DataTypeReg(Protocol):
         """
         Write property type for JSON-LD
 
-        :param identifier: the property identifier
+        :param identifier: a property identifier
         :return: not implemented, this is an interface
         """
         pass
@@ -74,15 +74,15 @@ class DataTypeReg(Protocol):
 
 class Epic:
     """
-    Class representing ePIC datatype registry
+    Class representing the ePIC dtr
     """
 
     def get_schema_info(self, datatype_id):
         """
-        Obtain information from an ePIC schema
+        Obtain information from an ePIC datatype
 
-        :param datatype_id: the identifier of a datatype
-        :return: extracted information from an ePIC schema
+        :param datatype_id: an ePIC datatype identifier
+        :return: extracted information from the ePIC datatype
         """
         static = from_static(datatype_id)
         if static is None:
@@ -94,10 +94,10 @@ class Epic:
     def add_context(self, prefix):
         """
         Write ePIC-specific context for JSON-LD
-        The ePIC-specific information is provided by the dtr
+        The ePIC-specific information is provided by the ePIC dtr
 
-        :param prefix: the URL prefix
-        :return: context to include in JSON-LD file
+        :param prefix: a URL prefix
+        :return: context to include in JSON-LD
         """
         context_info = {
             "doi": prefix,
@@ -115,10 +115,10 @@ class Epic:
 
     def add_dt_type(self, identifier):
         """
-        Write ePIC-specific schema type for JSON-LD
+        Write ePIC-specific datatype type for JSON-LD
 
-        :param identifier: the ePIC schema identifier
-        :return: type to include in JSON-LD file
+        :param identifier: an ePIC datatype identifier
+        :return: type to include in JSON-LD
         """
         dt_type = "doi:" + identifier
         return dt_type
@@ -127,8 +127,8 @@ class Epic:
         """
         Write ePIC-specific property type for JSON-LD
 
-        :param identifier: the ePIC property identifier
-        :return: property type to include in JSON-LD file
+        :param identifier: an ePIC property identifier
+        :return: property type to include in JSON-LD
         """
         dtp_type = "doi:" + identifier
         return dtp_type
@@ -137,7 +137,7 @@ class Epic:
         """
         Write ePIC-specific dataframe constants for JSON-LD
 
-        :return: dataframe constants to include in JSON-LD file
+        :return: dataframe constants to include in JSON-LD
         """
         df_constants = {
             "table": "doi:0424f6e7026fa4bc2c4a",
@@ -149,15 +149,15 @@ class Epic:
 
 class Orkg:
     """
-    Class representing ORKG datatype registry
+    Class representing the ORKG dtr
     """
 
     def get_schema_info(self, datatype_id):
         """
         Obtain information from an ORKG template
 
-        :param datatype_id: the identifier of an ORKG template
-        :return: extracted information from an ORKG template
+        :param datatype_id: an ORKG template identifier
+        :return: extracted information from the ORKG template
         """
         schema_info = extract_orkg(datatype_id)
         return schema_info
@@ -165,10 +165,10 @@ class Orkg:
     def add_context(self, prefix):
         """
         Write ORKG-specific context for JSON-LD
-        The ORKG-specific information is provided by the dtr
+        The ORKG-specific information is provided by the ORKG dtr
 
-        :param prefix: the URL prefix
-        :return: context to include in JSON-LD file
+        :param prefix: a URL prefix
+        :return: context to include in JSON-LD
         """
         context_info = {
             "orkgc": prefix + "class/",
@@ -191,8 +191,8 @@ class Orkg:
         """
         Write ORKG template type for JSON-LD
 
-        :param identifier: the ORKG template identifier
-        :return: type to include in JSON-LD file
+        :param identifier: an ORKG template identifier
+        :return: type to include in JSON-LD
         """
         dt_type = "orkgr:" + identifier
         return dt_type
@@ -201,8 +201,8 @@ class Orkg:
         """
         Write ORKG-specific property type for JSON-LD
 
-        :param identifier: the ORKG property identifier
-        :return: property type to include in JSON-LD file
+        :param identifier: an ORKG property identifier
+        :return: property type to include in JSON-LD
         """
         dtp_type = identifier if identifier == "label" else "orkgp:" + identifier
         return dtp_type
@@ -211,7 +211,7 @@ class Orkg:
         """
         Write ORKG-specific dataframe constants for JSON-LD
 
-        :return: dataframe constants to include in JSON-LD file
+        :return: dataframe constants to include in JSON-LD
         """
         df_constants = {
             "table": "orkgc:Table",

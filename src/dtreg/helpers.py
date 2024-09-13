@@ -3,7 +3,7 @@ def format_string(string):
     Format a string to lowercase, spaces and dashes as underscores
 
     :param string: a string
-    :return: the string formatted in a required way
+    :return: the string formatted in the required way
     """
     return string.lower().replace(" ", "_").replace("-", "_")
 
@@ -25,7 +25,7 @@ def get_prefix(url_string):
 
 def specify_cardinality(cardinality_string):
     """
-    Write cardinality of an ePIC property as dictionary
+    Write cardinality of an ePIC property as a dictionary
 
     :param cardinality_string: an ePIC string for cardinality
     :return: a dictionary with "min" and "max" values as integers or None

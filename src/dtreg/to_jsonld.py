@@ -9,9 +9,9 @@ uid = None
 
 def to_jsonld(instance):
     """
-    Write an instance into JSON-LD file
+    Write an instance in the JSON-LD format
 
-    :param instance: an instance of a datatype-related class
+    :param instance: an instance of a schema-related class
     :return: JSON string in JSON-LD format
     """
     result_all = {}

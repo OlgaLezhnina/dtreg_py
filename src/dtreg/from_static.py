@@ -4,10 +4,10 @@ from importlib_resources import files
 
 def from_static(datatype_id):
     """
-    Get schema information from static files, or None if not in static
+    Get schema information from static files
 
-    :param datatype_id: the identifier of a datatype, such as URL
-    :return: the requested schema information
+    :param datatype_id: a schema identifier
+    :return: the requested schema information, or None if not in static
     """
     id = datatype_id.split("/", 4)[4]
     schema_info = None

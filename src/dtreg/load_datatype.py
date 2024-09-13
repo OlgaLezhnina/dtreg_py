@@ -5,10 +5,10 @@ from types import SimpleNamespace
 
 def load_datatype(datatype_id):
     """
-    Load datatype schemata for creating a new instance
+    Load classes for a schema with the known identifier
 
-    :param datatype_id: the identifier of a datatype schema, such as URL
-    :return: a list of schemata as SimpleNameSpace objects
+    :param datatype_id: a schema identifier
+    :return: a list of schemata as SimpleNamespace objects
     """
     schemata_dict = write_classes(datatype_id)
     schemata = SimpleNamespace(**schemata_dict)
@@ -19,7 +19,7 @@ def write_classes(datatype_id):
     """
     Write classes for a specified datatype
 
-    :param datatype_id: the identifier of a datatype schema, such as URL
+    :param datatype_id: a schema identifier
     :return: a list of classes
     """
     datypreg = select_dtr(datatype_id)

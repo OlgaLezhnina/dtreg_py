@@ -17,7 +17,7 @@ def load_datatype(datatype_id):
 
 def write_classes(datatype_id):
     """
-    Write classes for a specified datatype
+    Write classes for a specified schema
 
     :param datatype_id: a schema identifier
     :return: a list of classes

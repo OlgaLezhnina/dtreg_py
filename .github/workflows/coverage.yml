@@ -23,7 +23,6 @@ jobs:
         
     - name: Produce coverage file
       run: |
-        cd dtreg_py
         pip install .
         coverage run -m unittest discover -s tests -p "*.py" -v
         coverage lcov

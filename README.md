@@ -1,4 +1,10 @@
 # dtreg
+<!-- badges: start -->
+![Python](https://img.shields.io/badge/python-3.8-blue.svg)
+[![PyPI version](https://badge.fury.io/py/dtreg.svg)](https://badge.fury.io/py/dtreg)
+[![Coverage Status](https://coveralls.io/repos/github/OlgaLezhnina/dtreg_py/badge.svg?branch=master)](https://coveralls.io/github/OlgaLezhnina/dtreg_py?branch=master)
+<!-- badges: end -->
+
 The goal of dtreg is to help users interact with various data type registries (DTRs) and create machine-readable data. 
 Currently, we support the [ePIC](https://fc4e-t4-3.github.io/) and [ORKG](https://orkg.org/) DTRs.
 * First, load a DTR schema (an ePIC datatype or an ORKG template) as a Python object.

@@ -4,6 +4,13 @@ Currently, we support the [ePIC](https://fc4e-t4-3.github.io/) and [ORKG](https:
 * First, load a DTR schema (an ePIC datatype or an ORKG template) as a Python object.
 * Then, create a new instance of the schema by filling in the relevant fields.
 * Finally, write the instance as a machine-readable JSON-LD file. 
+## Installation
+
+```sh
+## install from PyPi:
+pip install dtreg
+```
+
 ## Example
 
 This example shows you how to work with a DTR schema.

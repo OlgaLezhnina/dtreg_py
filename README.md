@@ -1,8 +1,9 @@
 # dtreg
 <!-- badges: start -->
-![Python](https://img.shields.io/badge/python-3.8-blue.svg)
 [![PyPI version](https://badge.fury.io/py/dtreg.svg)](https://badge.fury.io/py/dtreg)
 [![Coverage Status](https://coveralls.io/repos/github/OlgaLezhnina/dtreg_py/badge.svg?branch=master)](https://coveralls.io/github/OlgaLezhnina/dtreg_py?branch=master)
+
+![Python](https://img.shields.io/badge/python-3.8-blue.svg)
 <!-- badges: end -->
 
 The goal of dtreg is to help users interact with various data type registries (DTRs) and create machine-readable data. 

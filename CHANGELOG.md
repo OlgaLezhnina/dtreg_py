@@ -7,9 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2024-09-14
+
 ### Added
 
 * Initial release
+
+Exported functions: load_datatype() and to_jsonld()
 
 [unreleased]:
 [1.0.0]: https://gitlab.com/TIBHannover/orkg/dtreg-python/-/tags/v1.0.0

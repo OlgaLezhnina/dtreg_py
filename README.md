@@ -1,6 +1,6 @@
 # dtreg
 <!-- badges: start -->
-[![PyPI version](https://badge.fury.io/py/dtreg.svg)](https://badge.fury.io/py/dtreg)
+[![PyPI version](https://badge.fury.io/py/dtreg.svg?cache-control=no-cache)](https://badge.fury.io/py/dtreg)
 [![Coverage Status](https://coveralls.io/repos/github/OlgaLezhnina/dtreg_py/badge.svg?branch=master)](https://coveralls.io/github/OlgaLezhnina/dtreg_py?branch=master)
 
 ![Python](https://img.shields.io/badge/python-3.8-blue.svg)

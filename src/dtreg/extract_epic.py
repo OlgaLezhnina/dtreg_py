@@ -21,7 +21,14 @@ def extract_epic(datatype_id):
         extracted = [[schema_dict]]
         all_props = []
         for prop in info["Schema"].get("Properties", []):
-            if "Type" in prop:
+            if "Type" not in prop:
+                specific_prop_dict = {
+                    "dtp_name": format_string(prop["Property"]),
+                    "dtp_id": info["Identifier"] + "#" + format_string(prop["Property"]),
+                    "dtp_card_min": None,
+                    "dtp_card_max": None,
+                    "dtp_value_type": prop["Value"]}
+            else:
                 card = specify_cardinality(prop["Properties"]["Cardinality"])
                 specific_prop_dict = {
                     "dtp_name": format_string(prop["Name"]),
@@ -29,14 +36,8 @@ def extract_epic(datatype_id):
                     "dtp_card_min": card["min"],
                     "dtp_card_max": card["max"],
                     "dtp_value_type": prop["Type"]}
-                extractor_function("https://doi.org/" + prop["Type"])
-            else:
-                specific_prop_dict = {
-                    "dtp_name": format_string(prop["Property"]),
-                    "dtp_id": info["Identifier"] + "#" + format_string(prop["Property"]),
-                    "dtp_card_min": None,
-                    "dtp_card_max": None,
-                    "dtp_value_type": prop["Value"]}
+                if prop["Type"] != "":
+                    extractor_function("https://doi.org/" + prop["Type"])
             all_props.append(specific_prop_dict)
         extracted.append(all_props)
         extract_all[schema_dict["dt_name"]] = list(extracted)

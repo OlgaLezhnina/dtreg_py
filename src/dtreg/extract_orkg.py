@@ -30,7 +30,10 @@ def extract_orkg(datatype_id):
                 "dtp_card_max": prop["max_count"]
             }
             if "class" not in prop:
-                specific_prop_dict["dtp_value_type"] = prop["datatype"]["id"]
+                if "datatype" not in prop:
+                    specific_prop_dict["dtp_value_type"] = ""
+                else:
+                    specific_prop_dict["dtp_value_type"] = prop["datatype"]["id"]
             else:
                 specific_prop_dict["dtp_value_type"] = prop["class"]["id"]
                 info_n = request_dtr(

@@ -15,9 +15,9 @@ class TestLoadDatatype(unittest.TestCase):
         self.assertEqual(props, expected)
 
     def test_load_prop_orkg(self):
-        dt = load_datatype("https://incubating.orkg.org/template/R855534")
-        props = dt.inferential_test_output.prop_list
-        expected = ['has_format', 'has_description', 'comment', "label"]
+        dt = load_datatype("https://orkg.org/template/R758316")
+        props = dt.dtreg_test_template2.prop_list
+        expected = ['property3', 'label']
         self.assertEqual(props, expected)
 
 

@@ -9,8 +9,8 @@ class TestRequest(unittest.TestCase):
         self.assertEqual(b2_schema["name"], 'B2INST-Schema')
 
     def test_obtain_orkg(self):
-        b2_schema = request_dtr('https://incubating.orkg.org//api/templates/R855534')
-        self.assertEqual(b2_schema["label"], 'inferential_test_output')
+        b2_schema = request_dtr('https://orkg.org//api/templates/R758316')
+        self.assertEqual(b2_schema["label"], 'dtreg_test_template2')
 
 
 if __name__ == '__main__':

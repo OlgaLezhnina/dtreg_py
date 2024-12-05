@@ -22,8 +22,8 @@ pip install dtreg
 
 This example shows you how to work with a DTR schema.
 You need to know the schema identifier; see the [help page](https://orkg.org/help-center/article/47/reborn_articles).
-For instance, the schema “inferential test output” requires the ePIC datatype with the DOI <https://doi.org/21.T11969/74bc7748b8cd520908bc>.
-For the ORKG, please use the ORKG template URL, such as <https://incubating.orkg.org/template/R855534>.
+For instance, the schema “data item” requires the ePIC datatype with the DOI <https://doi.org/21.T11969/aff130c76e68ead3862e>.
+For the ORKG, please use the ORKG template URL, such as <https://orkg.org/template/R758316>.
 
 ```python
 ## import functions from the dtreg
@@ -32,11 +32,11 @@ from dtreg.to_jsonld import to_jsonld
 ## import pandas for a dataframe
 import pandas as pd
 ## load the schema with the known identifier
-dt = load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+dt = load_datatype("https://doi.org/21.T11969/aff130c76e68ead3862e")
 ## look at the schemata you might need to use
 dt.__dict__.keys() 
 ## check available fields for your schema
-dt.inferential_test_output.prop_list 
+dt.data_item.prop_list 
 ## create your instance by filling the fields of your choice
 ## see the help page to know more about the fields
 my_label = "my results"
@@ -44,9 +44,9 @@ my_df = pd.DataFrame({'A': [1], 'B': [2]})
 my_df.name = "dataframe_name"
 url_1 = dt.url(label = "URL_1")
 url_2 = dt.url(label = "URL_2")
-my_inst = dt.inferential_test_output(label = my_label,
-                                     has_description = [url_1, url_2],
-                                     has_format = my_df)
+my_inst = dt.data_item(label=my_label,
+                       has_expression=[url_1, url_2],
+                       source_table=my_df)
 ## write the instance in JSON-LD format as a string
 my_json = to_jsonld(my_inst) 
 

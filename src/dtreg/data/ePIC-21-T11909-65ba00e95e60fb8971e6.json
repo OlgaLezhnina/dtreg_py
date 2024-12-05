@@ -1,14 +1,4 @@
 {
-  "string": [
-    [
-      {
-        "dt_name": "string",
-        "dt_id": "3df63b7acb0522da685d",
-        "dt_class": "String"
-      }
-    ],
-    []
-  ],
   "integer_in_string": [
     [
       {
@@ -27,6 +17,16 @@
       }
     ]
   ],
+  "string": [
+    [
+      {
+        "dt_name": "string",
+        "dt_id": "3df63b7acb0522da685d",
+        "dt_class": "String"
+      }
+    ],
+    []
+  ],
   "column": [
     [
       {
@@ -36,13 +36,6 @@
       }
     ],
     [
-      {
-        "dtp_name": "label",
-        "dtp_id": "65ba00e95e60fb8971e6#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
       {
         "dtp_name": "number",
         "dtp_id": "65ba00e95e60fb8971e6#number",

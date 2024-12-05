@@ -27,38 +27,6 @@
       }
     ]
   ],
-  "statistical_variable": [
-    [
-      {
-        "dt_name": "statistical_variable",
-        "dt_id": "b95ff265a13137c31655",
-        "dt_class": "Object"
-      }
-    ],
-    [
-      {
-        "dtp_name": "label",
-        "dtp_id": "b95ff265a13137c31655#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
-      {
-        "dtp_name": "has_format",
-        "dtp_id": "b95ff265a13137c31655#has_format",
-        "dtp_card_min": 0,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
-      {
-        "dtp_name": "seealso",
-        "dtp_id": "b95ff265a13137c31655#seealso",
-        "dtp_card_min": 0,
-        "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
-      }
-    ]
-  ],
   "integer_in_string": [
     [
       {
@@ -77,31 +45,6 @@
       }
     ]
   ],
-  "sample_size": [
-    [
-      {
-        "dt_name": "sample_size",
-        "dt_id": "a002397ab31c7535f1be",
-        "dt_class": "Object"
-      }
-    ],
-    [
-      {
-        "dtp_name": "label",
-        "dtp_id": "a002397ab31c7535f1be#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
-      {
-        "dtp_name": "has_specified_numeric_value",
-        "dtp_id": "a002397ab31c7535f1be#has_specified_numeric_value",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
-      }
-    ]
-  ],
   "column": [
     [
       {
@@ -111,13 +54,6 @@
       }
     ],
     [
-      {
-        "dtp_name": "label",
-        "dtp_id": "65ba00e95e60fb8971e6#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
       {
         "dtp_name": "number",
         "dtp_id": "65ba00e95e60fb8971e6#number",
@@ -144,13 +80,6 @@
     ],
     [
       {
-        "dtp_name": "label",
-        "dtp_id": "4607bc7c42ac8db29bfc#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
-      {
         "dtp_name": "value",
         "dtp_id": "4607bc7c42ac8db29bfc#value",
         "dtp_card_min": 1,
@@ -175,13 +104,6 @@
       }
     ],
     [
-      {
-        "dtp_name": "label",
-        "dtp_id": "9bf7a8e8909bfd491b38#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
       {
         "dtp_name": "number",
         "dtp_id": "9bf7a8e8909bfd491b38#number",
@@ -237,10 +159,85 @@
       }
     ]
   ],
-  "data_input": [
+  "component": [
     [
       {
-        "dt_name": "data_input",
+        "dt_name": "component",
+        "dt_id": "cceac5fb8acf5ade2bf5",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "cceac5fb8acf5ade2bf5#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "see_also",
+        "dtp_id": "cceac5fb8acf5ade2bf5#see_also",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      }
+    ]
+  ],
+  "matrix_size": [
+    [
+      {
+        "dt_name": "matrix_size",
+        "dt_id": "31483624b5c80014b6c7",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "number_of_rows",
+        "dtp_id": "31483624b5c80014b6c7#number_of_rows",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
+      },
+      {
+        "dtp_name": "number_of_columns",
+        "dtp_id": "31483624b5c80014b6c7#number_of_columns",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
+      }
+    ]
+  ],
+  "figure": [
+    [
+      {
+        "dt_name": "figure",
+        "dt_id": "1f20e66b17a6eb7c2baf",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "1f20e66b17a6eb7c2baf#label",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "source_url",
+        "dtp_id": "1f20e66b17a6eb7c2baf#source_url",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      }
+    ]
+  ],
+  "data_item": [
+    [
+      {
+        "dt_name": "data_item",
         "dt_id": "aff130c76e68ead3862e",
         "dt_class": "Object"
       }
@@ -249,37 +246,51 @@
       {
         "dtp_name": "label",
         "dtp_id": "aff130c76e68ead3862e#label",
-        "dtp_card_min": 1,
+        "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "dtp_name": "source",
-        "dtp_id": "aff130c76e68ead3862e#source",
+        "dtp_name": "source_url",
+        "dtp_id": "aff130c76e68ead3862e#source_url",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      },
+      {
+        "dtp_name": "source_table",
+        "dtp_id": "aff130c76e68ead3862e#source_table",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/0424f6e7026fa4bc2c4a"
       },
       {
         "dtp_name": "has_part",
         "dtp_id": "aff130c76e68ead3862e#has_part",
         "dtp_card_min": 0,
         "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/b95ff265a13137c31655"
+        "dtp_value_type": "21.T11969/cceac5fb8acf5ade2bf5"
       },
       {
         "dtp_name": "has_characteristic",
         "dtp_id": "aff130c76e68ead3862e#has_characteristic",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/a002397ab31c7535f1be"
-      },
-      {
-        "dtp_name": "has_format",
-        "dtp_id": "aff130c76e68ead3862e#has_format",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/0424f6e7026fa4bc2c4a"
+        "dtp_value_type": "21.T11969/31483624b5c80014b6c7"
+      },
+      {
+        "dtp_name": "has_expression",
+        "dtp_id": "aff130c76e68ead3862e#has_expression",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/1f20e66b17a6eb7c2baf"
+      },
+      {
+        "dtp_name": "comment",
+        "dtp_id": "aff130c76e68ead3862e#comment",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       }
     ]
   ]

@@ -9,6 +9,24 @@
     ],
     []
   ],
+  "url": [
+    [
+      {
+        "dt_name": "url",
+        "dt_id": "e0efc41346cda4ba84ca",
+        "dt_class": "String"
+      }
+    ],
+    [
+      {
+        "dtp_name": "pattern",
+        "dtp_id": "e0efc41346cda4ba84ca#pattern",
+        "dtp_card_min": null,
+        "dtp_card_max": null,
+        "dtp_value_type": "^http(s)?:(\\/\\/([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?$"
+      }
+    ]
+  ],
   "software": [
     [
       {
@@ -26,29 +44,18 @@
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "dtp_name": "versioninfo",
-        "dtp_id": "c981d125d1a564c9f573#versioninfo",
+        "dtp_name": "version_info",
+        "dtp_id": "c981d125d1a564c9f573#version_info",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      }
-    ]
-  ],
-  "url": [
-    [
+      },
       {
-        "dt_name": "url",
-        "dt_id": "e0efc41346cda4ba84ca",
-        "dt_class": "String"
-      }
-    ],
-    [
-      {
-        "dtp_name": "pattern",
-        "dtp_id": "e0efc41346cda4ba84ca#pattern",
-        "dtp_card_min": null,
-        "dtp_card_max": null,
-        "dtp_value_type": "^http(s)?:(\\/\\/([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?$"
+        "dtp_name": "has_support_url",
+        "dtp_id": "c981d125d1a564c9f573#has_support_url",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
       }
     ]
   ],
@@ -69,8 +76,8 @@
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "dtp_name": "versioninfo",
-        "dtp_id": "4b99260369df9110f9bd#versioninfo",
+        "dtp_name": "version_info",
+        "dtp_id": "4b99260369df9110f9bd#version_info",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
@@ -108,8 +115,8 @@
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "dtp_name": "uses_software",
-        "dtp_id": "abef9f1c0d48853f3e51#uses_software",
+        "dtp_name": "part_of",
+        "dtp_id": "abef9f1c0d48853f3e51#part_of",
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/4b99260369df9110f9bd"
@@ -118,8 +125,8 @@
         "dtp_name": "is_implemented_by",
         "dtp_id": "abef9f1c0d48853f3e51#is_implemented_by",
         "dtp_card_min": 0,
-        "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "has_support_url",

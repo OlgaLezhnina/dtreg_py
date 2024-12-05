@@ -9,6 +9,24 @@
     ],
     []
   ],
+  "url": [
+    [
+      {
+        "dt_name": "url",
+        "dt_id": "e0efc41346cda4ba84ca",
+        "dt_class": "String"
+      }
+    ],
+    [
+      {
+        "dtp_name": "pattern",
+        "dtp_id": "e0efc41346cda4ba84ca#pattern",
+        "dtp_card_min": null,
+        "dtp_card_max": null,
+        "dtp_value_type": "^http(s)?:(\\/\\/([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?$"
+      }
+    ]
+  ],
   "software": [
     [
       {
@@ -26,29 +44,18 @@
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "dtp_name": "versioninfo",
-        "dtp_id": "c981d125d1a564c9f573#versioninfo",
+        "dtp_name": "version_info",
+        "dtp_id": "c981d125d1a564c9f573#version_info",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      }
-    ]
-  ],
-  "url": [
-    [
+      },
       {
-        "dt_name": "url",
-        "dt_id": "e0efc41346cda4ba84ca",
-        "dt_class": "String"
-      }
-    ],
-    [
-      {
-        "dtp_name": "pattern",
-        "dtp_id": "e0efc41346cda4ba84ca#pattern",
-        "dtp_card_min": null,
-        "dtp_card_max": null,
-        "dtp_value_type": "^http(s)?:(\\/\\/([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?$"
+        "dtp_name": "has_support_url",
+        "dtp_id": "c981d125d1a564c9f573#has_support_url",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
       }
     ]
   ],
@@ -69,8 +76,8 @@
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "dtp_name": "versioninfo",
-        "dtp_id": "4b99260369df9110f9bd#versioninfo",
+        "dtp_name": "version_info",
+        "dtp_id": "4b99260369df9110f9bd#version_info",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
@@ -108,8 +115,8 @@
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "dtp_name": "uses_software",
-        "dtp_id": "abef9f1c0d48853f3e51#uses_software",
+        "dtp_name": "part_of",
+        "dtp_id": "abef9f1c0d48853f3e51#part_of",
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/4b99260369df9110f9bd"
@@ -118,8 +125,8 @@
         "dtp_name": "is_implemented_by",
         "dtp_id": "abef9f1c0d48853f3e51#is_implemented_by",
         "dtp_card_min": 0,
-        "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "has_support_url",
@@ -130,32 +137,25 @@
       }
     ]
   ],
-  "statistical_variable": [
+  "component": [
     [
       {
-        "dt_name": "statistical_variable",
-        "dt_id": "b95ff265a13137c31655",
+        "dt_name": "component",
+        "dt_id": "cceac5fb8acf5ade2bf5",
         "dt_class": "Object"
       }
     ],
     [
       {
         "dtp_name": "label",
-        "dtp_id": "b95ff265a13137c31655#label",
+        "dtp_id": "cceac5fb8acf5ade2bf5#label",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "dtp_name": "has_format",
-        "dtp_id": "b95ff265a13137c31655#has_format",
-        "dtp_card_min": 0,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
-      {
-        "dtp_name": "seealso",
-        "dtp_id": "b95ff265a13137c31655#seealso",
+        "dtp_name": "see_also",
+        "dtp_id": "cceac5fb8acf5ade2bf5#see_also",
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
@@ -180,31 +180,6 @@
       }
     ]
   ],
-  "sample_size": [
-    [
-      {
-        "dt_name": "sample_size",
-        "dt_id": "a002397ab31c7535f1be",
-        "dt_class": "Object"
-      }
-    ],
-    [
-      {
-        "dtp_name": "label",
-        "dtp_id": "a002397ab31c7535f1be#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
-      {
-        "dtp_name": "has_specified_numeric_value",
-        "dtp_id": "a002397ab31c7535f1be#has_specified_numeric_value",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
-      }
-    ]
-  ],
   "column": [
     [
       {
@@ -214,13 +189,6 @@
       }
     ],
     [
-      {
-        "dtp_name": "label",
-        "dtp_id": "65ba00e95e60fb8971e6#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
       {
         "dtp_name": "number",
         "dtp_id": "65ba00e95e60fb8971e6#number",
@@ -247,13 +215,6 @@
     ],
     [
       {
-        "dtp_name": "label",
-        "dtp_id": "4607bc7c42ac8db29bfc#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
-      {
         "dtp_name": "value",
         "dtp_id": "4607bc7c42ac8db29bfc#value",
         "dtp_card_min": 1,
@@ -278,13 +239,6 @@
       }
     ],
     [
-      {
-        "dtp_name": "label",
-        "dtp_id": "9bf7a8e8909bfd491b38#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
       {
         "dtp_name": "number",
         "dtp_id": "9bf7a8e8909bfd491b38#number",
@@ -340,10 +294,60 @@
       }
     ]
   ],
-  "data_input": [
+  "matrix_size": [
     [
       {
-        "dt_name": "data_input",
+        "dt_name": "matrix_size",
+        "dt_id": "31483624b5c80014b6c7",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "number_of_rows",
+        "dtp_id": "31483624b5c80014b6c7#number_of_rows",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
+      },
+      {
+        "dtp_name": "number_of_columns",
+        "dtp_id": "31483624b5c80014b6c7#number_of_columns",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
+      }
+    ]
+  ],
+  "figure": [
+    [
+      {
+        "dt_name": "figure",
+        "dt_id": "1f20e66b17a6eb7c2baf",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "1f20e66b17a6eb7c2baf#label",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "source_url",
+        "dtp_id": "1f20e66b17a6eb7c2baf#source_url",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      }
+    ]
+  ],
+  "data_item": [
+    [
+      {
+        "dt_name": "data_item",
         "dt_id": "aff130c76e68ead3862e",
         "dt_class": "Object"
       }
@@ -352,243 +356,111 @@
       {
         "dtp_name": "label",
         "dtp_id": "aff130c76e68ead3862e#label",
-        "dtp_card_min": 1,
+        "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "dtp_name": "source",
-        "dtp_id": "aff130c76e68ead3862e#source",
+        "dtp_name": "source_url",
+        "dtp_id": "aff130c76e68ead3862e#source_url",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      },
+      {
+        "dtp_name": "source_table",
+        "dtp_id": "aff130c76e68ead3862e#source_table",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/0424f6e7026fa4bc2c4a"
       },
       {
         "dtp_name": "has_part",
         "dtp_id": "aff130c76e68ead3862e#has_part",
         "dtp_card_min": 0,
         "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/b95ff265a13137c31655"
+        "dtp_value_type": "21.T11969/cceac5fb8acf5ade2bf5"
       },
       {
         "dtp_name": "has_characteristic",
         "dtp_id": "aff130c76e68ead3862e#has_characteristic",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/a002397ab31c7535f1be"
-      },
-      {
-        "dtp_name": "has_format",
-        "dtp_id": "aff130c76e68ead3862e#has_format",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/0424f6e7026fa4bc2c4a"
-      }
-    ]
-  ],
-  "outcome_variable": [
-    [
-      {
-        "dt_name": "outcome_variable",
-        "dt_id": "540c1a27569dc7ce906b",
-        "dt_class": "Object"
-      }
-    ],
-    [
-      {
-        "dtp_name": "label",
-        "dtp_id": "540c1a27569dc7ce906b#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+        "dtp_value_type": "21.T11969/31483624b5c80014b6c7"
       },
       {
-        "dtp_name": "requires",
-        "dtp_id": "540c1a27569dc7ce906b#requires",
-        "dtp_card_min": 1,
-        "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/b95ff265a13137c31655"
-      }
-    ]
-  ],
-  "grouping_factor": [
-    [
-      {
-        "dt_name": "grouping_factor",
-        "dt_id": "1f4df47aacf6562bc07b",
-        "dt_class": "Object"
-      }
-    ],
-    [
-      {
-        "dtp_name": "label",
-        "dtp_id": "1f4df47aacf6562bc07b#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
-      {
-        "dtp_name": "requires",
-        "dtp_id": "1f4df47aacf6562bc07b#requires",
-        "dtp_card_min": 1,
-        "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/b95ff265a13137c31655"
-      }
-    ]
-  ],
-  "interaction_effect": [
-    [
-      {
-        "dt_name": "interaction_effect",
-        "dt_id": "af3a26d0e0b9e2fdc05c",
-        "dt_class": "Object"
-      }
-    ],
-    [
-      {
-        "dtp_name": "label",
-        "dtp_id": "af3a26d0e0b9e2fdc05c#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
-      {
-        "dtp_name": "requires",
-        "dtp_id": "af3a26d0e0b9e2fdc05c#requires",
-        "dtp_card_min": 1,
-        "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/b95ff265a13137c31655"
-      }
-    ]
-  ],
-  "covariate": [
-    [
-      {
-        "dt_name": "covariate",
-        "dt_id": "9445db970678d3b0c7ec",
-        "dt_class": "Object"
-      }
-    ],
-    [
-      {
-        "dtp_name": "label",
-        "dtp_id": "9445db970678d3b0c7ec#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
-      {
-        "dtp_name": "requires",
-        "dtp_id": "9445db970678d3b0c7ec#requires",
+        "dtp_name": "has_expression",
+        "dtp_id": "aff130c76e68ead3862e#has_expression",
         "dtp_card_min": 0,
         "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/b95ff265a13137c31655"
-      }
-    ]
-  ],
-  "inferential_test_output": [
-    [
-      {
-        "dt_name": "inferential_test_output",
-        "dt_id": "74bc7748b8cd520908bc",
-        "dt_class": "Object"
-      }
-    ],
-    [
-      {
-        "dtp_name": "label",
-        "dtp_id": "74bc7748b8cd520908bc#label",
-        "dtp_card_min": 1,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
-      {
-        "dtp_name": "has_description",
-        "dtp_id": "74bc7748b8cd520908bc#has_description",
-        "dtp_card_min": 0,
-        "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+        "dtp_value_type": "21.T11969/1f20e66b17a6eb7c2baf"
       },
       {
         "dtp_name": "comment",
-        "dtp_id": "74bc7748b8cd520908bc#comment",
+        "dtp_id": "aff130c76e68ead3862e#comment",
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
-      },
-      {
-        "dtp_name": "has_format",
-        "dtp_id": "74bc7748b8cd520908bc#has_format",
-        "dtp_card_min": 0,
-        "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/0424f6e7026fa4bc2c4a"
       }
     ]
   ],
-  "statistical_test_of_difference": [
+  "multilevel_analysis": [
     [
       {
-        "dt_name": "statistical_test_of_difference",
-        "dt_id": "ff5e3f857788d20dd1aa",
+        "dt_name": "multilevel_analysis",
+        "dt_id": "c6b413ba96ba477b5dca",
         "dt_class": "Object"
       }
     ],
     [
       {
         "dtp_name": "label",
-        "dtp_id": "ff5e3f857788d20dd1aa#label",
+        "dtp_id": "c6b413ba96ba477b5dca#label",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
+        "dtp_name": "see_also",
+        "dtp_id": "c6b413ba96ba477b5dca#see_also",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      },
+      {
         "dtp_name": "executes",
-        "dtp_id": "ff5e3f857788d20dd1aa#executes",
-        "dtp_card_min": 1,
+        "dtp_id": "c6b413ba96ba477b5dca#executes",
+        "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/abef9f1c0d48853f3e51"
       },
       {
-        "dtp_name": "has_specified_input",
-        "dtp_id": "ff5e3f857788d20dd1aa#has_specified_input",
-        "dtp_card_min": 1,
+        "dtp_name": "targets",
+        "dtp_id": "c6b413ba96ba477b5dca#targets",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/cceac5fb8acf5ade2bf5"
+      },
+      {
+        "dtp_name": "level",
+        "dtp_id": "c6b413ba96ba477b5dca#level",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/cceac5fb8acf5ade2bf5"
+      },
+      {
+        "dtp_name": "has_input",
+        "dtp_id": "c6b413ba96ba477b5dca#has_input",
+        "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/aff130c76e68ead3862e"
       },
       {
-        "dtp_name": "evaluates",
-        "dtp_id": "ff5e3f857788d20dd1aa#evaluates",
-        "dtp_card_min": 1,
-        "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/540c1a27569dc7ce906b"
-      },
-      {
-        "dtp_name": "difference_between",
-        "dtp_id": "ff5e3f857788d20dd1aa#difference_between",
+        "dtp_name": "has_output",
+        "dtp_id": "c6b413ba96ba477b5dca#has_output",
         "dtp_card_min": 0,
-        "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/1f4df47aacf6562bc07b"
-      },
-      {
-        "dtp_name": "has_part",
-        "dtp_id": "ff5e3f857788d20dd1aa#has_part",
-        "dtp_card_min": 0,
-        "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/af3a26d0e0b9e2fdc05c"
-      },
-      {
-        "dtp_name": "has_characteristic",
-        "dtp_id": "ff5e3f857788d20dd1aa#has_characteristic",
-        "dtp_card_min": 0,
-        "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/9445db970678d3b0c7ec"
-      },
-      {
-        "dtp_name": "has_specified_output",
-        "dtp_id": "ff5e3f857788d20dd1aa#has_specified_output",
-        "dtp_card_min": 1,
         "dtp_card_max": 1,
-        "dtp_value_type": "21.T11969/74bc7748b8cd520908bc"
+        "dtp_value_type": "21.T11969/aff130c76e68ead3862e"
       }
     ]
   ]

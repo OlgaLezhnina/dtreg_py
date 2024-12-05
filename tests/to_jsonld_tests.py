@@ -52,17 +52,16 @@ class TestJsonLd(unittest.TestCase):
             ValueError, "SystemExit: Input in  has_format  should not be a function")
 
     def test_jsonld_epic_nested(self):
-        dt = load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-        table = dt.table(label="Table")
-        instance = dt.inferential_test_output(has_format=table)
+        dt = load_datatype("https://doi.org/21.T11969/aff130c76e68ead3862e")
+        url = dt.url()
+        instance = dt.data_item(has_expression=url)
         result = to_jsonld(instance)
         expected = ('{\n'
                     '  "@id": "_:n1",\n'
-                    '  "@type": "doi:74bc7748b8cd520908bc",\n'
-                    '  "doi:74bc7748b8cd520908bc#has_format": {\n'
+                    '  "@type": "doi:aff130c76e68ead3862e",\n'
+                    '  "doi:aff130c76e68ead3862e#has_expression": {\n'
                     '    "@id": "_:n2",\n'
-                    '    "@type": "doi:0424f6e7026fa4bc2c4a",\n'
-                    '    "doi:0424f6e7026fa4bc2c4a#label": "Table"\n'
+                    '    "@type": "doi:e0efc41346cda4ba84ca"\n'
                     '  },\n'
                     '  "@context": {\n'
                     '    "doi": "https://doi.org/21.T11969/",\n'
@@ -81,15 +80,15 @@ class TestJsonLd(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_jsonld_epic_list(self):
-        dt = load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+        dt = load_datatype("https://doi.org/21.T11969/aff130c76e68ead3862e")
         url_1 = dt.url()
         url_2 = dt.url()
-        instance = dt.inferential_test_output(has_description=[url_1, url_2])
+        instance = dt.data_item(has_expression=[url_1, url_2])
         result = to_jsonld(instance)
         expected = ('{\n'
                     '  "@id": "_:n1",\n'
-                    '  "@type": "doi:74bc7748b8cd520908bc",\n'
-                    '  "doi:74bc7748b8cd520908bc#has_description": [\n'
+                    '  "@type": "doi:aff130c76e68ead3862e",\n'
+                    '  "doi:aff130c76e68ead3862e#has_expression": [\n'
                     '    {\n'
                     '      "@id": "_:n2",\n'
                     '      "@type": "doi:e0efc41346cda4ba84ca"\n'

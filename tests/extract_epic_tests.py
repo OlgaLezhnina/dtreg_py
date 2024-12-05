@@ -13,9 +13,11 @@ class TestExtractEpic(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_extract_epic_props(self):
-        schema = extract_epic("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-        values = schema["inferential_test_output"][1][0].values()
-        expected = "dict_values(['label', '21.T11969/74bc7748b8cd520908bc#label', 1, 1, '21.T11969/3df63b7acb0522da685d'])"
+        schema = extract_epic("https://doi.org/21.T11969/31483624b5c80014b6c7")
+        values = schema["matrix_size"][1][0].values()
+        expected = "dict_values(['number_of_rows', "\
+            "'21.T11969/31483624b5c80014b6c7#number_of_rows', 1, 1, "\
+            "'21.T11969/fb2e379f820c6f8f9e82'])"
         self.assertEqual(str(values), expected)
 
 

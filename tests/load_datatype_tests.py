@@ -9,9 +9,9 @@ class TestLoadDatatype(unittest.TestCase):
         self.assertEqual(next(iter(dt.__dict__)), 'pidinst_schemaobject')
 
     def test_load_prop_epic(self):
-        dt = load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-        props = dt.inferential_test_output.prop_list
-        expected = ['label', 'has_description', 'comment', 'has_format']
+        dt = load_datatype("https://doi.org/21.T11969/31483624b5c80014b6c7")
+        props = dt.matrix_size.prop_list
+        expected = ['number_of_rows', 'number_of_columns']
         self.assertEqual(props, expected)
 
     def test_load_prop_orkg(self):

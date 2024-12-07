@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2024-12-07
+
+### Added
+
+* Allow schemata with flexibly selected parts.
+
+### Changed
+
+* Update static files.
+* Update schemata for unit tests.
+
 ## [1.0.0] - 2024-09-14
 
 ### Added

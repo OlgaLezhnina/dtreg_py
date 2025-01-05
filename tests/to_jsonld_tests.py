@@ -45,11 +45,11 @@ class TestJsonLd(unittest.TestCase):
     def test_no_function(self):
         def abc(x):
             return x+1
-        dt = load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-        instance = dt.inferential_test_output(has_format=abc)
+        dt = load_datatype("https://doi.org/21.T11969/aff130c76e68ead3862e")
+        instance = dt.data_item(source_table=abc)
         to_jsonld(instance)
         self.assertRaisesRegex(
-            ValueError, "SystemExit: Input in  has_format  should not be a function")
+            ValueError, "SystemExit: Input in source_table should not be a function")
 
     def test_jsonld_epic_nested(self):
         dt = load_datatype("https://doi.org/21.T11969/aff130c76e68ead3862e")

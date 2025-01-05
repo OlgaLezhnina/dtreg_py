@@ -43,4 +43,7 @@ where = ["src"]
 [tool.setuptools.package-data]
 "dtreg.data" = ["*.json", "src/dtreg/data/*"]
 
+[pytest]
+norecursedirs = "tests/helpers_mock"
+
 [tool.setuptools_scm]

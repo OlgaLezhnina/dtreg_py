@@ -1,4 +1,6 @@
 import unittest
+from unittest.mock import patch
+from helpers_mock.mocking import mocked_request_dtr
 from dtreg.load_datatype import load_datatype
 
 
@@ -14,6 +16,7 @@ class TestLoadDatatype(unittest.TestCase):
         expected = ['number_of_rows', 'number_of_columns']
         self.assertEqual(props, expected)
 
+    @patch("dtreg.extract_orkg.request_dtr", mocked_request_dtr)
     def test_load_prop_orkg(self):
         dt = load_datatype("https://orkg.org/template/R758316")
         props = dt.dtreg_test_template2.prop_list

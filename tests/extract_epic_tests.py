@@ -1,15 +1,22 @@
 import unittest
+from unittest.mock import patch
+from helpers_mock.mocking import mocked_request_epic
 from dtreg.extract_epic import extract_epic
 
 
+@patch("dtreg.extract_epic.request_dtr", mocked_request_epic)
 class TestExtractEpic(unittest.TestCase):
 
     def test_extract_epic(self):
-        result = extract_epic("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
-        expected = {'pidinst_schemaobject': [[{'dt_name': 'pidinst_schemaobject',
-                                               'dt_id': '1ea0e148d9bbe08335cd',
-                                               'dt_class': 'Object'}],
-                                             []]}
+        result = extract_epic("https://doi.org/21.T11969/fb2e379f820c6f8f9e82")
+        expected = {'integer_in_string': [[{'dt_name': 'integer_in_string',
+                                            'dt_id': 'fb2e379f820c6f8f9e82',
+                                            'dt_class': 'String'}],
+                                          [{'dtp_name': 'pattern',
+                                            'dtp_id': '21.T11969/fb2e379f820c6f8f9e82#pattern',
+                                            'dtp_card_min': None,
+                                            'dtp_card_max': None,
+                                            'dtp_value_type': '^[0-9]+$'}]]}
         self.assertEqual(result, expected)
 
     def test_extract_epic_props(self):

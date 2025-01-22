@@ -7,8 +7,8 @@ from dtreg.load_datatype import load_datatype
 class TestLoadDatatype(unittest.TestCase):
 
     def test_load_nonstatic(self):
-        dt = load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
-        self.assertEqual(next(iter(dt.__dict__)), 'pidinst_schemaobject')
+        dt = load_datatype("https://doi.org/21.T11969/fb2e379f820c6f8f9e82")
+        self.assertEqual(next(iter(dt.__dict__)), 'integer_in_string')
 
     def test_load_prop_epic(self):
         dt = load_datatype("https://doi.org/21.T11969/31483624b5c80014b6c7")

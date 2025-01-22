@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from helpers_mock.mocking import mocked_request_dtr
+from helpers_mock.mocking import mocked_request_orkg
 import pandas as pd
 from dtreg.load_datatype import load_datatype
 from dtreg.dtr_interface import Epic
@@ -115,7 +115,7 @@ class TestJsonLd(unittest.TestCase):
                     '}')
         self.assertEqual(result, expected)
 
-    @patch("dtreg.extract_orkg.request_dtr", mocked_request_dtr)
+    @patch("dtreg.extract_orkg.request_dtr", mocked_request_orkg)
     def test_jsonld_orkg(self):
         dt = load_datatype("https://orkg.org/template/R758316")
         instance = dt.dtreg_test_template2(label="test")

@@ -1,10 +1,10 @@
 import unittest
 from unittest.mock import patch
-from helpers_mock.mocking import mocked_request_dtr
+from helpers_mock.mocking import mocked_request_orkg
 from dtreg.extract_orkg import extract_orkg
 
 
-@patch("dtreg.extract_orkg.request_dtr", mocked_request_dtr)
+@patch("dtreg.extract_orkg.request_dtr", mocked_request_orkg)
 class TestExtractOrkg(unittest.TestCase):
 
     def test_extract_orkg(self):

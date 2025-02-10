@@ -21,7 +21,7 @@ pip install dtreg
 ## Example
 
 This example shows you how to work with a DTR schema.
-You need to know the schema identifier; see the [help page](https://orkg.org/help-center/article/47/reborn_articles).
+You need to know the schema identifier; see the [help page](https://reborn.orkg.org/pages/help).
 For instance, the schema “data item” requires the ePIC datatype with the DOI <https://doi.org/21.T11969/aff130c76e68ead3862e>.
 For the ORKG, please use the ORKG template URL, such as <https://orkg.org/template/R758316>.
 
@@ -55,4 +55,4 @@ with open('my_file.json', 'w') as f:
     f.write(my_json)
 
 ```
-For more information, please see the [help page](https://orkg.org/help-center/article/47/reborn_articles).
+For more information, please see the [help page](https://reborn.orkg.org/pages/help).

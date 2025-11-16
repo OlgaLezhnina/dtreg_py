@@ -21,7 +21,7 @@ pip install dtreg
 ## Example
 
 This example shows you how to work with a DTR schema.
-You need to know the schema identifier; see the [help page](https://reborn.orkg.org/pages/help).
+You need to know the schema identifier; see the [help page](https://knowledgeloom.tib.eu/pages/help).
 
 ```python
 ## import functions from the dtreg
@@ -53,4 +53,4 @@ with open('my_file.json', 'w') as f:
     f.write(my_json)
 
 ```
-For more information, please see the [help page](https://reborn.orkg.org/pages/help).
+For more information, please see the [help page](https://knowledgeloom.tib.eu/pages/help).

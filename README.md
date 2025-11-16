@@ -6,6 +6,9 @@
 ![Python](https://img.shields.io/badge/python-3.8-blue.svg)
 <!-- badges: end -->
 
+**100% AI-free: we did not use any AI technologies in developing this
+package.**
+
 The goal of dtreg is to help users interact with various data type registries (DTRs) and create machine-readable data. 
 Currently, we support the [ePIC](https://fc4e-t4-3.github.io/) and [ORKG](https://orkg.org/) DTRs.
 * First, load a DTR schema (an ePIC datatype or an ORKG template) as a Python object.

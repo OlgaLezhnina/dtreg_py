@@ -10,7 +10,7 @@ authors = [
     {name = "Markus Stocker", email = "markus.stocker@tib.eu"},
 ]
 maintainers = [
-    {name = "Olga Lezhnina", email = "olga.lezhnina@tib.eu"}
+    {name = "Markus Stocker", email = "markus.stocker@tib.eu"}
 ]
 description = "Interact with Data Type Registries and Create Machine Actionable Data"
 readme = "README.md"

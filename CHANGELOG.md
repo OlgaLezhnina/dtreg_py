@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2025-11-17
+
+### Changed
+
+* Update the data analysis schema in static files.
+* Change the help page from reborn to Loom.
+* Change the maintainer.
+
+
 ## [1.1.1] - 2025-02-15
 
 ### Changed

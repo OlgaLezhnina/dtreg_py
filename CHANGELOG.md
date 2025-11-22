@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Update the data analysis schema in static files.
 * Change the help page from reborn to Loom.
+* Change the repository URL from orkg to Loom.
+* Move coverage tests from GitHub plus Coveralls to GitLab CICD.
 * Change the maintainer.
 
 

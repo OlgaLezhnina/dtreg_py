@@ -1,8 +1,8 @@
 # dtreg
 <!-- badges: start -->
 [![PyPI version](https://badge.fury.io/py/dtreg.svg?cache-control=no-cache)](https://badge.fury.io/py/dtreg)
-
 ![Python](https://img.shields.io/badge/python-3.8-blue.svg)
+![coverage](https://gitlab.com/TIBHannover/lki/knowledge-loom/dtreg-python/badges/master/coverage.svg)
 <!-- badges: end -->
 
 **100% AI-free: we did not use any AI technologies in developing this

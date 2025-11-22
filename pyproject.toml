@@ -31,8 +31,8 @@ dependencies = [
 dynamic = ["version"]
 
 [project.urls]
-Repository = "https://gitlab.com/TIBHannover/orkg/dtreg-python"
-Changelog = "https://gitlab.com/TIBHannover/orkg/dtreg-python/-/blob/master/CHANGELOG.md"
+Repository = "https://gitlab.com/TIBHannover/lki/knowledge-loom/dtreg-python"
+Changelog = "https://gitlab.com/TIBHannover/lki/knowledge-loom/dtreg-python/-/blob/master/CHANGELOG.md"
 
 [tool.setuptools]
 include-package-data = true

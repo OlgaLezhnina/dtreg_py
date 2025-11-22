@@ -43,5 +43,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Exported functions: load_datatype() and to_jsonld()
 
-[unreleased]:
-[1.0.0]: https://gitlab.com/TIBHannover/orkg/dtreg-python/-/tags/v1.0.0
+[unreleased]: https://gitlab.com/TIBHannover/lki/knowledge-loom/dtreg-python/-/compare/v1.1.2...master
+[1.1.2]: https://gitlab.com/TIBHannover/lki/knowledge-loom/dtreg-python/-/compare/v1.1.1...v1.1.2
+[1.1.1]: https://gitlab.com/TIBHannover/lki/knowledge-loom/dtreg-python/-/compare/v1.1.0...v1.1.1
+[1.1.0]: https://gitlab.com/TIBHannover/lki/knowledge-loom/dtreg-python/-/compare/v1.0.0...v1.1.0
+[1.0.0]: https://gitlab.com/TIBHannover/lki/knowledge-loom/dtreg-python/-/tags/v1.0.0
